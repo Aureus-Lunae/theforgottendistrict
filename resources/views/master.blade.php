@@ -58,22 +58,35 @@ if($coonectionStream >= 1) {
 				</div>
 				<ul class="nav_links">
 					<li><a href="/">Home</a></li>
-					<li><a href="/">Info</a></li>
+					<li>
+						<input id="info" type="checkbox" name="info"/>
+						<label for="info">Info</label>
+						<ul class="submenu">
+							<li><a href="/">Staff</a></li>
+							<li><a href="/">Rules</a><
+						</ul>
+					</li>
 					<li><a href="/">SWR</a></li>
 					<li><a href="/">Support Us</a></li>
-					
+
 					@guest
 						<li><a href={{ route('login') }}>{{ __('Login') }}</a></li>
 						@if (Route::has('register'))
 							<li><a href={{ route('register') }}>{{ __('Register') }}</a></li>
 						@endif
 					@else
-					<li> {{ Auth::user()->name }}
-						<div class="dropdown_auth">
-								<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-			            document.getElementById('logout-form').submit();">
-								{{ __('Logout') }}</a>
-						</div>
+					<li> 
+						<input id="usermenu" type="checkbox" name="usermenu"/>
+						<label for="usermenu">{{ Auth::user()->name }} </label>
+						<ul class="submenu">
+							<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+									{{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+							</li>
+						</ul>
 					</li>
 					@endguest
 

@@ -41,29 +41,79 @@
 			margin: 0 20px 0 0;
 			color: $navbar-text;
 
+			label {
+				box-sizing: border-box;
+				overflow: hidden;
+				max-width: 180px;
+				position: relative;
+				display: block;
+				float: left;
+				cursor: pointer;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
 
-			li {
-				display: inline-block;
+			input {
+				display: none;
+			}
+
+			input:checked~label {
+				color: $primary;
+			}
+
+			input:checked~ul.submenu {
+				position: relative;
+				max-height: 300px;
+				transition: max-height 0.5s ease-in;
+			}
+
+			ul.submenu {
+				padding: 0;
+				display: block;
+				max-height: 0px;
+				transition: max-height 0.5s ease-out;
+				overflow: hidden;
+				list-style-type: none;
+				position: absolute;
+				min-width: 100%;
+				max-width: 200px;
+
+				li {
+					padding: 5px;
+					display: block;
+					box-sizing: border-box;
+				}
+			}
+
+			&>li {
+				max-width: 220px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				background: $navbar;
+				display: block;
+				float: left;
 				padding: 16px 20px;
 				font-size: 20px;
 				box-sizing: border-box;
 				transform: skew(-20deg);
-
+				position: relative;
 				border-left: 1px solid $navbar-text;
 
 				&:hover {
 					color: $navbar-text-hover;
 				}
+			}
 
-				a {
-					color: $navbar-text;
-					text-decoration: none;
+			a {
+				display: block;
+				color: $navbar-text;
+				text-decoration: none;
 
-					&:hover {
-						color: $navbar-text-hover;
-					}
+				&:hover {
+					color: $navbar-text-hover;
 				}
 			}
+
 		}
 	}
 }
