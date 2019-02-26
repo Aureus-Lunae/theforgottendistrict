@@ -1,0 +1,69 @@
+/* Header */
+
+.header_wrapper {
+	font-family: 'Laila', serif;
+	z-index: 1;
+
+	.banner {
+		padding: 32px;
+		height: 64px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.ip,
+	.status {
+		font-size: 22px;
+		font-weight: 700;
+	}
+
+	.offline {
+		color: $error_text;
+	}
+
+	.online {
+		color: $succes_text;
+	}
+
+	.navigation {
+		position: sticky;
+		box-sizing: border-box;
+		height: 70px;
+		padding: 3px 20px;
+		background: $navbar;
+		color: $navbar-text;
+
+		.nav_links {
+			list-style: none;
+			float: right;
+			margin: 0 20px 0 0;
+			color: $navbar-text;
+
+
+			li {
+				display: inline-block;
+				padding: 16px 20px;
+				font-size: 20px;
+				box-sizing: border-box;
+				transform: skew(-20deg);
+
+				border-left: 1px solid $navbar-text;
+
+				&:hover {
+					color: $navbar-text-hover;
+				}
+
+				a {
+					color: $navbar-text;
+					text-decoration: none;
+
+					&:hover {
+						color: $navbar-text-hover;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,52 @@
+/* Media Queries */
+
+@media (min-width: 520px) {
+	.page_wrapper {
+		grid-template-columns: 1fr 3fr;
+		grid-template-areas:
+			"header 	header"
+			"sidebar 	content"
+			"ad 	content	"
+			"footer 	footer";
+	}
+
+	.content_wrapper {
+		grid-template-columns: 2fr 1fr;
+		grid-template-areas:
+			"main 	side"
+			"main 	side";
+	}
+}
+
+@media (min-width: 1000px) {
+	.page_wrapper {
+		grid-template-columns: 1fr 3fr 1fr;
+		grid-template-areas:
+			"header 	header 	header"
+			"sidebar 	content 	ad"
+			"sidebar 	content		ad"
+			"footer 	footer 	footer";
+	}
+
+	#particles-js {
+		display: block;
+	}
+}
+
+@media (min-width: 1400px) {
+	.page_wrapper {
+		grid-template-columns: 1fr 4fr 1fr;
+		grid-template-areas:
+			"header 	header 	header"
+			"sidebar 	content 	ad"
+			"sidebar 	content		ad"
+			"footer 	footer 	footer";
+	}
+
+	.content_wrapper {
+		grid-template-columns: 3fr 1fr;
+		grid-template-areas:
+			"main 	side"
+			"main 	side";
+	}
+}

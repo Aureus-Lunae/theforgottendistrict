@@ -1,0 +1,18 @@
+/* Shapes */
+
+#nav_title {
+	position: absolute;
+	top: -10px;
+	box-sizing: border-box;
+	margin-left: 40px;
+	padding: 5px;
+	width: 250px;
+	height: 90px;
+	transform: skew(-20deg);
+	font-size: 28px;
+	background: $navbar;
+	color: $navbar-text;
+	text-align: center;
+	font-family: 'Laila', serif;
+	font-weight: 700;
+}
