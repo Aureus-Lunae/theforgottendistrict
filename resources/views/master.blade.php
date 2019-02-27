@@ -52,6 +52,8 @@ if($coonectionStream >= 1) {
 					IP: 144.217.115.102
 				</div>
 			</div>
+
+			{{-- Navigation --}}
 			<div class="navigation">
 				<div id="nav_title">
 					The Forgotten District
@@ -60,15 +62,16 @@ if($coonectionStream >= 1) {
 					<li><a href="/">Home</a></li>
 					<li>
 						<input id="info" type="checkbox" name="info"/>
-						<label for="info">Info</label>
+						<label for="info">Server Info</label>
 						<ul class="submenu">
 							<li><a href="/">Staff</a></li>
-							<li><a href="/">Rules</a><
+							<li><a href="/">Rules</a></li>
+							<li><a href="/">SWR</a></li>
 						</ul>
 					</li>
-					<li><a href="/">SWR</a></li>
 					<li><a href="/">Support Us</a></li>
 
+					{{-- Authorization Links --}}
 					@guest
 						<li><a href={{ route('login') }}>{{ __('Login') }}</a></li>
 						@if (Route::has('register'))

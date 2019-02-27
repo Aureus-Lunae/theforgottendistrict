@@ -88,10 +88,12 @@ body {
   color: #f2f2f2;
 }
 .header_wrapper .navigation .nav_links label {
+  padding: 16px 20px;
   box-sizing: border-box;
   overflow: hidden;
   max-width: 180px;
-  position: relative;
+  text-align: center;
+  overflow: hidden;
   display: block;
   float: left;
   cursor: pointer;
@@ -99,50 +101,44 @@ body {
   white-space: nowrap;
 }
 .header_wrapper .navigation .nav_links input {
-  display: none;
+  visibility: hidden;
 }
 .header_wrapper .navigation .nav_links input:checked ~ label {
   color: #00e6e6;
 }
 .header_wrapper .navigation .nav_links input:checked ~ ul.submenu {
-  position: relative;
   max-height: 300px;
   transition: max-height 0.5s ease-in;
 }
 .header_wrapper .navigation .nav_links ul.submenu {
   padding: 0;
-  display: block;
   max-height: 0px;
   transition: max-height 0.5s ease-out;
   overflow: hidden;
   list-style-type: none;
-  position: absolute;
   min-width: 100%;
   max-width: 200px;
 }
 .header_wrapper .navigation .nav_links ul.submenu li {
-  padding: 5px;
   display: block;
   box-sizing: border-box;
 }
 .header_wrapper .navigation .nav_links > li {
-  max-width: 220px;
-  overflow: hidden;
-  text-overflow: ellipsis;
   background: #333333;
   display: block;
   float: left;
-  padding: 16px 20px;
   font-size: 20px;
   box-sizing: border-box;
   transform: skew(-20deg);
-  position: relative;
   border-left: 1px solid #f2f2f2;
 }
 .header_wrapper .navigation .nav_links > li:hover {
   color: #00e6e6;
 }
 .header_wrapper .navigation .nav_links a {
+  max-width: 220px;
+  text-overflow: ellipsis;
+  padding: 16px 20px;
   display: block;
   color: #f2f2f2;
   text-decoration: none;
