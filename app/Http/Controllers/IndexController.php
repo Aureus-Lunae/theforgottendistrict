@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\news;
+
+class IndexController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    public function index(){
+    	$news = news::orderBy('created_at','desc')
+    							->take(10)
+    							->get();
+    	return view('index', compact('news'));
+    }
+}

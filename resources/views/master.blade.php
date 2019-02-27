@@ -29,7 +29,7 @@ if($coonectionStream >= 1) {
 	<meta name="keywords" content=" " />
 	<meta name="author" content="Erwin Korsten" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/main.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Laila|Montserrat:400,700" rel="stylesheet">
 	<title>@yield('title', 'The Forgotten District')</title>
 </head>
@@ -82,6 +82,13 @@ if($coonectionStream >= 1) {
 						<input id="usermenu" type="checkbox" name="usermenu"/>
 						<label for="usermenu">{{ Auth::user()->name }} </label>
 						<ul class="submenu">
+
+							{{-- If Staff Member and Rank at least Head Admin --}}
+							@if (Auth::user()->staff == 1 && Auth::user()->rank >= 6)
+								<li><a href={{ route('createNews') }}>Add news</a></li>
+							@endif
+
+
 							<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 									{{ __('Logout') }}
                 </a>
@@ -105,8 +112,8 @@ if($coonectionStream >= 1) {
 
 	</div>
 
-	<script src="js/particles.js"></script>
-	<script src="js/particlesapp.js"></script>
+	<script src="/js/particles.js"></script>
+	<script src="/js/particlesapp.js"></script>
 </body>
 
 </html>
