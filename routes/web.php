@@ -27,9 +27,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //News Routes
 Route::post('/news', 'newsController@store')->middleware('auth');
-
-
 Route::get('/news/create', 'newsController@create')->middleware('auth')->name('createNews');
 Route::get('/news/{news}/edit', 'newsController@edit')->middleware('auth');
-
 Route::patch('/news/{news}', 'newsController@update')->middleware('auth');
