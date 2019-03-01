@@ -61,9 +61,12 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  background: url("/img/headeroverlay.png") no-repeat;
+  background-size: cover;
 }
 .header_wrapper .ip,
 .header_wrapper .status {
+  color: #f2f2f2;
   font-size: 22px;
   font-weight: 700;
 }

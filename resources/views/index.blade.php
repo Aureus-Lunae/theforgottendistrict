@@ -8,8 +8,11 @@
     @foreach($news as $newsArticle)
       <div class="news">
         <h2>{{ $newsArticle->title }}</h2>
-        @if (Auth::user()->staff == 1 && Auth::user()->rank >= 6)
-          <div class='edit'><a href="/news/{{$newsArticle->id}}/edit"> edit </a></div>
+        @guest
+        @else
+          @if (Auth::user()->staff == 1 && Auth::user()->rank >= 6)
+           <div class='edit'><a href="/news/{{$newsArticle->id}}/edit"> edit </a></div>
+         @endif
         @endif
          <div class="date">{{ date('d-m-Y', strtotime($newsArticle->created_at)) }}</div>
          <div class="author">by {{ $newsArticle->user_name }}</div>

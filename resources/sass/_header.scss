@@ -11,10 +11,13 @@
 		align-items: center;
 		justify-content: space-between;
 		flex-wrap: wrap;
+		background: url("/img/headeroverlay.png") no-repeat;
+		background-size: cover;
 	}
 
 	.ip,
 	.status {
+		color: $navbar-text;
 		font-size: 22px;
 		font-weight: 700;
 	}
