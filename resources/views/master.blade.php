@@ -1,22 +1,30 @@
 @php
 //ip address of you server
-$ip = "144.217.115.102";
-//port of your minecraft server
-$port = 25565;
+if (Session::has('isOnline')) {
+   $online = Session::get('isOnline');
+} else {
+	$ip = "144.217.115.102";
+	//port of your minecraft server
+	$port = 25565;
 
-// create a connection using the fsockopen function
+	// create a connection using the fsockopen function
 
-$coonectionStream = @fsockopen( $ip, $port, $errno, $errstr, 2);
+	$coonectionStream = @fsockopen( $ip, $port, $errno, $errstr, 2);
 
-//check if the connection worked and the server is online
+	//check if the connection worked and the server is online
 
-if($coonectionStream >= 1) {
-	$online = true;
-	fclose($coonectionStream);
-	//echo out information if server is online
-	} else {
-		$online = false;
-	}
+	if($coonectionStream >= 1) {
+		$online = true;
+		fclose($coonectionStream);
+		//echo out information if server is online
+		} else {
+			$online = false;
+		}
+
+	Session::put('isOnline', $online);
+}
+
+
 @endphp
 
 <!DOCTYPE html>

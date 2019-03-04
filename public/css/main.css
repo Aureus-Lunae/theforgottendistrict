@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  background: #00e6e6;
-  color: #333333;
+  background: #471540;
+  color: #e6e6e6;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -30,7 +30,7 @@ body {
 .content_wrapper {
   padding: 10px;
   box-sizing: border-box;
-  background: #00e6e6;
+  background: #471540;
   display: grid;
   grid-gap: 10px;
   grid-area: content;
@@ -66,29 +66,29 @@ body {
 }
 .header_wrapper .ip,
 .header_wrapper .status {
-  color: #f2f2f2;
+  color: #e6e6e6;
   font-size: 22px;
   font-weight: 700;
 }
 .header_wrapper .offline {
-  color: maroon;
+  color: #ff7a7a;
 }
 .header_wrapper .online {
-  color: #053d00;
+  color: #15ff00;
 }
 .header_wrapper .navigation {
   position: sticky;
   box-sizing: border-box;
   height: 70px;
   padding: 3px 20px;
-  background: #333333;
-  color: #f2f2f2;
+  background: #1c1547;
+  color: #e6e6e6;
 }
 .header_wrapper .navigation .nav_links {
   list-style: none;
   float: right;
   margin: 0 20px 0 0;
-  color: #f2f2f2;
+  color: #e6e6e6;
 }
 .header_wrapper .navigation .nav_links label {
   padding: 16px 20px;
@@ -107,7 +107,7 @@ body {
   visibility: hidden;
 }
 .header_wrapper .navigation .nav_links input:checked ~ label {
-  color: #00e6e6;
+  color: #471540;
 }
 .header_wrapper .navigation .nav_links input:checked ~ ul.submenu {
   max-height: 300px;
@@ -127,13 +127,13 @@ body {
   box-sizing: border-box;
 }
 .header_wrapper .navigation .nav_links > li {
-  background: #333333;
+  background: #1c1547;
   display: block;
   float: left;
   font-size: 20px;
   box-sizing: border-box;
   transform: skew(-20deg);
-  border-left: 1px solid #f2f2f2;
+  border-left: 1px solid #e6e6e6;
 }
 .header_wrapper .navigation .nav_links > li:hover {
   color: #00e6e6;
@@ -143,7 +143,7 @@ body {
   text-overflow: ellipsis;
   padding: 16px 20px;
   display: block;
-  color: #f2f2f2;
+  color: #e6e6e6;
   text-decoration: none;
 }
 .header_wrapper .navigation .nav_links a:hover {
@@ -164,13 +164,13 @@ body {
   font-size: 24px;
   padding: 10px 20px;
   text-align: center;
-  color: #f2f2f2;
+  color: #e6e6e6;
   z-index: 1;
 }
 .content_title:after {
   content: "";
   position: absolute;
-  background: #333333;
+  background: #1c1547;
   width: 100%;
   height: 100%;
   top: 0;
@@ -190,8 +190,8 @@ body {
   height: 90px;
   transform: skew(-20deg);
   font-size: 28px;
-  background: #333333;
-  color: #f2f2f2;
+  background: #1c1547;
+  color: #e6e6e6;
   text-align: center;
   font-family: "Laila", serif;
   font-weight: 700;
