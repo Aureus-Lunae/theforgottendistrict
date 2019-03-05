@@ -94,6 +94,7 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        news::destroy($id);
+        return redirect('/');
     }
 }

@@ -13,20 +13,17 @@
 
 Route::get('/', 'IndexController@index');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/master', function () {
-    return view('master');
-});
+Route::get('/rules', 'IndexController@rules');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Profile Routes
+Route::get('/profile', 'UserController@profile')->name('profile');
+Route::patch('/profile/avatar', 'UserController@updateAvatar');
 
 //News Routes
 Route::post('/news', 'newsController@store')->middleware('auth');
 Route::get('/news/create', 'newsController@create')->middleware('auth')->name('createNews');
 Route::get('/news/{news}/edit', 'newsController@edit')->middleware('auth');
 Route::patch('/news/{news}', 'newsController@update')->middleware('auth');
+Route::delete('/news/{news}', 'newsController@destroy')->middleware('auth');

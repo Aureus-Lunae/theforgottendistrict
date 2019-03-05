@@ -12,6 +12,13 @@
       <textarea name="news" placeholder="news">{{ $news->news }}</textarea>
       <input type="submit" class="button" value="Update News"/> 
     </form>
+
+    <form method="POST" action="/news/{{ $news->id }}">
+
+      {{ method_field('DELETE') }}
+      {{ csrf_field() }}
+      <input type="submit" class="button" value="Delete"/> 
+    </form>
     
   </div>
 @endsection

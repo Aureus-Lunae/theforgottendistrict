@@ -39,7 +39,7 @@ body {
 	box-sizing: border-box;
 	background: $primary;
 	display: grid;
-	grid-gap: 10px;
+	grid-gap: 16px;
 	grid-area: content;
 	grid-template-areas:
 		"main"
@@ -58,9 +58,17 @@ body {
 	grid-area: footer;
 }
 
+.main_container {
+	grid-area: main;
+}
+
+.side_container {
+	grid-area: side;
+}
 
 @import 'header';
 @import 'home';
 @import 'shapes';
 @import 'media';
 @import 'forms';
+@import 'rules';

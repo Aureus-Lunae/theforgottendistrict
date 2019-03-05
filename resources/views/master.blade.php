@@ -3,7 +3,7 @@
 if (Session::has('isOnline')) {
    $online = Session::get('isOnline');
 } else {
-	$ip = "144.217.115.102";
+	$ip = "144.217.109.52";
 	//port of your minecraft server
 	$port = 25565;
 
@@ -39,6 +39,7 @@ if (Session::has('isOnline')) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/main.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Laila|Montserrat:400,700" rel="stylesheet">
+	<meta name="theme-color" content="#471540">
 	<title>@yield('title', 'The Forgotten District')</title>
 </head>
 
@@ -57,7 +58,7 @@ if (Session::has('isOnline')) {
 					@endphp
 				</div>
 				<div class="ip">
-					IP: 144.217.115.102
+					IP: play.theforgottendistrict.com
 				</div>
 			</div>
 
@@ -73,8 +74,7 @@ if (Session::has('isOnline')) {
 						<label for="info">Server Info</label>
 						<ul class="submenu">
 							<li><a href="/">Staff</a></li>
-							<li><a href="/">Rules</a></li>
-							<li><a href="/">SWR</a></li>
+							<li><a href="/rules">Rules</a></li>
 						</ul>
 					</li>
 					<li><a href="/">Support Us</a></li>
@@ -88,9 +88,10 @@ if (Session::has('isOnline')) {
 					@else
 					<li> 
 						<input id="usermenu" type="checkbox" name="usermenu"/>
-						<label for="usermenu">{{ Auth::user()->name }} </label>
+						<label for="usermenu">
+							{{ Auth::user()->name }} </label>
 						<ul class="submenu">
-
+							<li><a href={{ route('profile') }}>Profile</a></li>
 							{{-- If Staff Member and Rank at least Head Admin --}}
 							@if (Auth::user()->staff == 1 && Auth::user()->rank >= 6)
 								<li><a href={{ route('createNews') }}>Add news</a></li>

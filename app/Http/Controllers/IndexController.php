@@ -15,4 +15,8 @@ class IndexController extends Controller
     							->get();
     	return view('index', compact('news'));
     }
+
+    public function rules(){
+    	return view('rules');
+    }
 }
