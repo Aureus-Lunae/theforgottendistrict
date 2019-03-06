@@ -12,6 +12,7 @@
       <p class="descr">{!! nl2br(e($user->desc )) !!}</p>
     </div>
 
+    <div class="links"><a href="/profile/changePassword">Change Password</a></div>
     <form enctype="multipart/form-data" action="/profile/avatar" method="POST">
       {{ method_field('PATCH') }}
       {{ csrf_field() }}
