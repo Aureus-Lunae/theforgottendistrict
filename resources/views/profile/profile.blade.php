@@ -15,6 +15,7 @@
     <div class="profile_links">
       <div class="links">
         <a href="/profile/changePassword">Change Password</a>
+        <a href="/profile/changeDescr">Change Description</a>
       </div>
       <form enctype="multipart/form-data" action="/profile/avatar" method="POST">
         {{ method_field('PATCH') }}

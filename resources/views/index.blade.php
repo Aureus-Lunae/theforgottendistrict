@@ -21,11 +21,11 @@
     @endforeach
 
     @if ($news->nextPageUrl() )
-      <div class="older"><a href="{{ $news->nextPageUrl() }}">Older News</a></div>
+      <div class="older"><a href="{{ $news->nextPageUrl() }}"> <<< Older News</a></div>
     @endif
 
     @if ($news->previousPageUrl() )
-      <div class="newer"><a href="{{ $news->previousPageUrl() }}">Newer</a></div>
+      <div class="newer"><a href="{{ $news->previousPageUrl() }}"> Newer >>> </a></div>
     @endif
 
 	</div>

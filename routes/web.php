@@ -25,6 +25,8 @@ Auth::routes(['verify' => true]);
 Route::get('/profile', 'UserController@profile')->middleware('verified')->name('profile');
 Route::get('/profile/changePassword', 'UserController@showChangePasswordForm')->middleware('verified');
 Route::post('/profile/changePassword', 'UserController@changePassword')->middleware('verified');
+Route::get('/profile/changeDescr', 'UserController@showChangeDescrForm')->middleware('verified');
+Route::post('/profile/changeDescr', 'UserController@changeDescr')->middleware('verified');
 Route::patch('/profile/avatar', 'UserController@updateAvatar')->middleware('verified');
 
 //News Routes

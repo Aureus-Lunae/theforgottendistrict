@@ -193,6 +193,7 @@ body {
 .newer a {
   color: #e6e6e6;
   padding: 8px 16px;
+  text-decoration: none;
   text-align: center;
   z-index: 1;
   position: relative;
@@ -535,6 +536,10 @@ body {
   left: 0;
   transform: skew(-15deg);
   z-index: -1;
+}
+.profile .joined {
+  font-style: italic;
+  font-size: 14px;
 }
 
 .profile_links {

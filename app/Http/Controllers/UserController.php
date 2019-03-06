@@ -35,7 +35,7 @@ class UserController extends Controller
    }
 
    public function showChangePasswordForm(){
-      return view('auth.changepassword');
+      return view('auth.changePassword');
    }
 
    public function changePassword(Request $request){
@@ -66,5 +66,29 @@ class UserController extends Controller
     $user->save();
 
     return redirect()->back()->with("success","Password changed successfully !");
+   }
+
+   public function showChangeDescrForm(){
+      return view('profile.changeDescription');
+   }
+
+   public function changedescr(Request $request){
+
+    if (!(Hash::check($request->get('currentPassword'), Auth::user()->password))){
+      return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
+    }
+
+    $validateData = $request->validate([
+      'currentPassword' => 'required',
+    ]);
+
+
+    //Change Password
+  
+    $user = Auth::user();
+    $user->desc = $request->get('descr');
+    $user->save();
+
+    return redirect()->back()->with("success","Description changed successfully !");
    }
 }
