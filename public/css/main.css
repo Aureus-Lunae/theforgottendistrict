@@ -179,6 +179,37 @@ body {
   font-style: italic;
 }
 
+.older {
+  float: left;
+  display: block;
+}
+
+.newer {
+  float: right;
+  display: block;
+}
+
+.older a,
+.newer a {
+  color: #e6e6e6;
+  padding: 8px 16px;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+.older a:after,
+.newer a:after {
+  content: "";
+  position: absolute;
+  background: #1c1547;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: skew(-15deg);
+  z-index: -1;
+}
+
 .events_container {
   grid-area: side;
 }

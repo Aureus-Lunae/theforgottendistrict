@@ -12,8 +12,7 @@ class IndexController extends Controller
     
     public function index(){
     	$news = news::orderBy('created_at','desc')
-    							->take(10)
-    							->get();
+    							->simplePaginate(5);
     	return view('index', compact('news'));
     }
 
