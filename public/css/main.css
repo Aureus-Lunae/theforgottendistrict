@@ -504,4 +504,86 @@ body {
   display: block;
 }
 
+/* Profile */
+.profile {
+  display: block;
+  min-height: 260px;
+}
+.profile .avatar {
+  width: 256px;
+  height: 256px;
+  float: left;
+  border-radius: 50%;
+  margin-right: 32px;
+}
+.profile h2 {
+  display: inline-block;
+  position: relative;
+  font-size: 21px;
+  font-weight: 700;
+  padding: 8px 16px;
+  text-align: center;
+  z-index: 1;
+}
+.profile h2:after {
+  content: "";
+  position: absolute;
+  background: #15471c;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: skew(-15deg);
+  z-index: -1;
+}
+
+.profile_links {
+  width: 100%;
+}
+.profile_links .links {
+  display: flex;
+  justify-content: center;
+  margin: 8px;
+}
+.profile_links .links a {
+  display: inline-block;
+  margin: 0 8px;
+  color: #e6e6e6;
+  text-decoration: none;
+  padding: 8px 16px;
+  z-index: 1;
+  position: relative;
+}
+.profile_links .links a:after {
+  content: "";
+  position: absolute;
+  background: #1c1547;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: skew(-15deg);
+  z-index: -1;
+}
+.profile_links form {
+  margin: 16px 8px;
+}
+.profile_links form label {
+  display: inline-block;
+  margin-right: 8px;
+}
+.profile_links form .button {
+  width: 250px;
+  font-size: 20px;
+  color: #e6e6e6;
+  background: #15471c;
+  outline: none;
+  border-radius: 8px;
+}
+.profile_links form .button:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
 /*# sourceMappingURL=main.css.map */
