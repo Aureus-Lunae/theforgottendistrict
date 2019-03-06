@@ -1,5 +1,12 @@
 /* Forms */
 
+.form_center_v {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
 .form_img {
 	width: 256px;
 	height: 256px;
@@ -72,6 +79,7 @@
 
 		textarea {
 			margin-top: 5px;
+			margin-bottom: 16px;
 			padding: 2px 5px;
 			font-size: 20px;
 			display: block;
@@ -98,6 +106,10 @@
 				top: 2px;
 				left: 2px;
 			}
+		}
+
+		.delete {
+			background: $error;
 		}
 	}
 }

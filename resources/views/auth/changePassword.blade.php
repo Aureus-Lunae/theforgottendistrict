@@ -34,6 +34,6 @@
   </div>
 
   <div class="side_container">
-  <img src="/img/site/chest.png" alt="change password" class="form_img" />
+    <img src="/img/site/chest.png" alt="change password" class="form_img" />
   </div>
 @endsection
