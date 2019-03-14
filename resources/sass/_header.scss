@@ -38,9 +38,76 @@
 		background: $navbar;
 		color: $navbar-text;
 
-		.nav_links {
-			list-style: none;
+		.menu_toggle {
+			display: none;
+		}
+
+		.menu_button {
+			cursor: pointer;
+			display: flex;
 			float: right;
+			padding: 16px 20px;
+			position: relative;
+			height: 32px;
+			align-items: center;
+
+			span {
+				background: $primary-text;
+				display: block;
+				height: 4px;
+				position: relative;
+				width: 32px;
+				border-radius: 2px;
+
+				&:before,
+				&:after {
+					background: $primary-text;
+					content: '';
+					display: block;
+					height: 100%;
+					position: absolute;
+					transition: all .2s ease-out;
+					width: 100%;
+					border-radius: 2px;
+				}
+
+				&:before {
+					top: -10px;
+				}
+
+				&:after {
+					top: 10px;
+				}
+			}
+		}
+
+
+		/* Menu on */
+		.menu_toggle:checked~.nav_links {
+			max-height: 100vh;
+		}
+
+		.menu_toggle:checked~.menu_button span {
+			background: transparent;
+
+			&:before {
+				transform: rotate(45deg);
+				top: 0px;
+			}
+
+			&:after {
+				transform: rotate(-45deg);
+				top: 0px;
+			}
+		}
+
+
+		.nav_links {
+			overflow: hidden;
+			list-style: none;
+			clear: both;
+			max-height: 0;
+			transition: max-height .2s ease-out;
 			margin: 0 20px 0 0;
 			color: $navbar-text;
 
@@ -48,12 +115,7 @@
 				padding: 16px 20px;
 				box-sizing: border-box;
 				overflow: hidden;
-				max-width: 180px;
-				//min-width: 100%;
-				text-align: center;
-				overflow: hidden;
-				display: block;
-				float: left;
+				display: none;
 				cursor: pointer;
 				text-overflow: ellipsis;
 				white-space: nowrap;
@@ -63,21 +125,10 @@
 				display: none;
 			}
 
-			input:checked~label {
-				color: $navbar-text-hover;
-			}
-
-			input:checked~ul.submenu {
-				max-height: 300px;
-				transition: max-height 0.5s ease-in;
-			}
-
 			ul.submenu {
 				padding: 0;
 				background: $navbar;
-				position: absolute;
 				top: 100%;
-				max-height: 0px;
 				transition: max-height 0.5s ease-out;
 				overflow: hidden;
 				list-style-type: none;
@@ -93,11 +144,9 @@
 			&>li {
 				background: $navbar;
 				display: block;
-				float: left;
 				font-size: 20px;
 				box-sizing: border-box;
-				transform: skew(-20deg);
-				border-left: 1px solid $navbar-text;
+
 
 				&:hover {
 					color: $navbar-text-hover;
@@ -105,7 +154,6 @@
 			}
 
 			a {
-				max-width: 220px;
 				text-overflow: ellipsis;
 				padding: 16px 20px;
 				display: block;
@@ -116,7 +164,6 @@
 					color: $navbar-text-hover;
 				}
 			}
-
 		}
 	}
 }

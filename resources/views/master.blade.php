@@ -67,6 +67,9 @@ if (Session::has('isOnline')) {
 				<div id="nav_title">
 					The Forgotten District
 				</div>
+				<input class="menu_toggle" type="checkbox" id="menu_toggle">
+				<label class="menu_button" for="menu_toggle"><span></span></label>
+
 				<ul class="nav_links">
 					<li><a href="/">Home</a></li>
 					<li>

@@ -91,10 +91,64 @@ body {
   padding: 3px 20px;
   background: #1c1547;
   color: #e6e6e6;
+  /* Menu on */
+}
+.header_wrapper .navigation .menu_toggle {
+  display: none;
+}
+.header_wrapper .navigation .menu_button {
+  cursor: pointer;
+  display: flex;
+  float: right;
+  padding: 16px 20px;
+  position: relative;
+  height: 32px;
+  align-items: center;
+}
+.header_wrapper .navigation .menu_button span {
+  background: #e6e6e6;
+  display: block;
+  height: 4px;
+  position: relative;
+  width: 32px;
+  border-radius: 2px;
+}
+.header_wrapper .navigation .menu_button span:before, .header_wrapper .navigation .menu_button span:after {
+  background: #e6e6e6;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  border-radius: 2px;
+}
+.header_wrapper .navigation .menu_button span:before {
+  top: -10px;
+}
+.header_wrapper .navigation .menu_button span:after {
+  top: 10px;
+}
+.header_wrapper .navigation .menu_toggle:checked ~ .nav_links {
+  max-height: 100vh;
+}
+.header_wrapper .navigation .menu_toggle:checked ~ .menu_button span {
+  background: transparent;
+}
+.header_wrapper .navigation .menu_toggle:checked ~ .menu_button span:before {
+  transform: rotate(45deg);
+  top: 0px;
+}
+.header_wrapper .navigation .menu_toggle:checked ~ .menu_button span:after {
+  transform: rotate(-45deg);
+  top: 0px;
 }
 .header_wrapper .navigation .nav_links {
+  overflow: hidden;
   list-style: none;
-  float: right;
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
   margin: 0 20px 0 0;
   color: #e6e6e6;
 }
@@ -102,11 +156,7 @@ body {
   padding: 16px 20px;
   box-sizing: border-box;
   overflow: hidden;
-  max-width: 180px;
-  text-align: center;
-  overflow: hidden;
-  display: block;
-  float: left;
+  display: none;
   cursor: pointer;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -114,19 +164,10 @@ body {
 .header_wrapper .navigation .nav_links input {
   display: none;
 }
-.header_wrapper .navigation .nav_links input:checked ~ label {
-  color: #00e6e6;
-}
-.header_wrapper .navigation .nav_links input:checked ~ ul.submenu {
-  max-height: 300px;
-  transition: max-height 0.5s ease-in;
-}
 .header_wrapper .navigation .nav_links ul.submenu {
   padding: 0;
   background: #1c1547;
-  position: absolute;
   top: 100%;
-  max-height: 0px;
   transition: max-height 0.5s ease-out;
   overflow: hidden;
   list-style-type: none;
@@ -140,17 +181,13 @@ body {
 .header_wrapper .navigation .nav_links > li {
   background: #1c1547;
   display: block;
-  float: left;
   font-size: 20px;
   box-sizing: border-box;
-  transform: skew(-20deg);
-  border-left: 1px solid #e6e6e6;
 }
 .header_wrapper .navigation .nav_links > li:hover {
   color: #00e6e6;
 }
 .header_wrapper .navigation .nav_links a {
-  max-width: 220px;
   text-overflow: ellipsis;
   padding: 16px 20px;
   display: block;
@@ -277,6 +314,52 @@ body {
 
   #particles-js {
     display: block;
+  }
+
+  .header_wrapper .navigation .menu_button {
+    display: none;
+  }
+
+  .header_wrapper .navigation .nav_links {
+    max-height: 600px;
+    float: right;
+    overflow: visible;
+  }
+  .header_wrapper .navigation .nav_links input:checked ~ label {
+    color: #00e6e6;
+  }
+  .header_wrapper .navigation .nav_links input:checked ~ ul.submenu {
+    max-height: 300px;
+    transition: max-height 0.5s ease-in;
+  }
+  .header_wrapper .navigation .nav_links label {
+    display: block;
+    float: left;
+    max-width: 180px;
+  }
+  .header_wrapper .navigation .nav_links > li {
+    float: left;
+    border-left: 1px solid #e6e6e6;
+    transform: skew(-20deg);
+  }
+  .header_wrapper .navigation .nav_links a {
+    max-width: 220px;
+  }
+  .header_wrapper .navigation .nav_links ul.submenu {
+    padding: 0;
+    background: #1c1547;
+    position: absolute;
+    top: 100%;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+    list-style-type: none;
+    min-width: 100%;
+    max-width: 200px;
+  }
+  .header_wrapper .navigation .nav_links ul.submenu li {
+    display: block;
+    box-sizing: border-box;
   }
 }
 @media (min-width: 1400px) {
