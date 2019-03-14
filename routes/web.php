@@ -30,8 +30,8 @@ Route::post('/profile/changeDescr', 'UserController@changeDescr')->middleware('v
 Route::patch('/profile/avatar', 'UserController@updateAvatar')->middleware('verified');
 
 //News Routes
-Route::post('/news', 'newsController@store')->middleware('verified');
-Route::get('/news/create', 'newsController@create')->middleware('verified')->name('createNews');
-Route::get('/news/{news}/edit', 'newsController@edit')->middleware('verified');
-Route::patch('/news/{news}', 'newsController@update')->middleware('verified');
-Route::delete('/news/{news}', 'newsController@destroy')->middleware('verified');
+Route::post('/news', 'NewsController@store')->middleware('verified');
+Route::get('/news/create', 'NewsController@create')->middleware('verified')->name('createNews');
+Route::get('/news/{news}/edit', 'NewsController@edit')->middleware('verified');
+Route::patch('/news/{news}', 'NewsController@update')->middleware('verified');
+Route::delete('/news/{news}', 'NewsController@destroy')->middleware('verified');
