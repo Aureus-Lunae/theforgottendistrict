@@ -65,6 +65,9 @@ class User extends Authenticatable implements MustVerifyEmail
                     $rank = 'Helper';
                 }
                 break;
+            case 2:
+                $rank = 'Special';
+                break;
             case 1:
                 $rank = 'Donator';
                 break;
@@ -73,5 +76,15 @@ class User extends Authenticatable implements MustVerifyEmail
                 break;
         }
         return $rank;
+    }
+
+        public function hasRole($role) {
+        $value = $this->rank;
+
+        if ($value < $role) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
