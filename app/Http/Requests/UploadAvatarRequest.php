@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class UploadAvatarRequest extends FormRequest
 {

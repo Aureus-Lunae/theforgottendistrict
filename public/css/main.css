@@ -330,7 +330,7 @@ body {
 }
 
 /* Media Queries */
-@media (min-width: 520px) {
+@media (min-width: 656px) {
   .page_wrapper {
     grid-template-columns: 1fr 3fr;
     grid-template-areas: "header 	header" "sidebar 	content" "ad 	content	" "footer 	footer";
@@ -716,24 +716,25 @@ body {
   font-size: 14px;
 }
 
-.profile_links {
+.dashboard_links {
   width: 100%;
 }
-.profile_links .links {
+.dashboard_links .links {
   display: flex;
   justify-content: center;
   margin: 8px;
+  flex-wrap: wrap;
 }
-.profile_links .links a {
+.dashboard_links .links a {
   display: inline-block;
-  margin: 0 8px;
+  margin: 8px 8px;
   color: #e6e6e6;
   text-decoration: none;
   padding: 8px 16px;
   z-index: 1;
   position: relative;
 }
-.profile_links .links a:after {
+.dashboard_links .links a:after {
   content: "";
   position: absolute;
   background: #1c1547;
@@ -744,18 +745,17 @@ body {
   transform: skew(-15deg);
   z-index: -1;
 }
-.profile_links form {
+.dashboard_links form {
   display: block;
   width: 300px;
-  float: left;
   margin: 16px 8px;
 }
-.profile_links form label {
+.dashboard_links form label {
   margin: 5px 0;
   display: block;
   margin-right: 8px;
 }
-.profile_links form .button {
+.dashboard_links form .button {
   margin: 5px 0;
   display: block;
   width: 250px;
@@ -765,10 +765,31 @@ body {
   outline: none;
   border-radius: 8px;
 }
-.profile_links form .button:active {
+.dashboard_links form .button:active {
   position: relative;
   top: 2px;
   left: 2px;
+}
+
+.dashboard h2 {
+  display: block;
+  position: relative;
+  font-size: 21px;
+  font-weight: 700;
+  padding: 8px 16px;
+  text-align: center;
+  z-index: 1;
+}
+.dashboard h2:after {
+  content: "";
+  position: absolute;
+  background: #15471c;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: skew(-15deg);
+  z-index: -1;
 }
 
 /*# sourceMappingURL=main.css.map */

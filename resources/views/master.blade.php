@@ -56,11 +56,6 @@
 							{{ Auth::user()->name }} </label>
 						<ul class="submenu">
 							<li><a href={{ route('profile') }}>Profile</a></li>
-							{{-- If Staff Member and Rank at least Head Admin --}}
-							@if (Auth::user()->staff == 1 && Auth::user()->rank >= 6)
-								<li><a href={{ route('createNews') }}>Add news</a></li>
-							@endif
-
 
 							<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 									{{ __('Logout') }}
