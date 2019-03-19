@@ -73,14 +73,20 @@
 	}
 
 	form {
+		display: block;
+		width: 300px;
+		float: left;
 		margin: 16px 8px;
 
 		label {
-			display: inline-block;
+			margin: 5px 0;
+			display: block;
 			margin-right: 8px;
 		}
 
 		.button {
+			margin: 5px 0;
+			display: block;
 			width: 250px;
 			font-size: 20px;
 			color: $primary-text;

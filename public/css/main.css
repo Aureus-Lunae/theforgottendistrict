@@ -745,13 +745,19 @@ body {
   z-index: -1;
 }
 .profile_links form {
+  display: block;
+  width: 300px;
+  float: left;
   margin: 16px 8px;
 }
 .profile_links form label {
-  display: inline-block;
+  margin: 5px 0;
+  display: block;
   margin-right: 8px;
 }
 .profile_links form .button {
+  margin: 5px 0;
+  display: block;
   width: 250px;
   font-size: 20px;
   color: #e6e6e6;

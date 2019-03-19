@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Hash;
 use Image;
+use File;
 use App\Http\Requests\UploadAvatarRequest;
 
 class UserController extends Controller
