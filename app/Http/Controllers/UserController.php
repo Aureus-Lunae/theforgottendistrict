@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Hash;
 use Image;
+use App\Http\Requests\UploadAvatarRequest;
 
 class UserController extends Controller
 {
@@ -18,9 +19,10 @@ class UserController extends Controller
    	return view('profile.profile', array('user' => Auth::user() ) );
    }
 
-   public function updateAvatar(Request $request){
+   public function updateAvatar(UploadAvatarRequest $request){
 
    	if($request->hasFile('avatar')) {
+
    		$avatar = $request->file('avatar');
    		$filename = time() . '.' . $avatar->getClientOriginalExtension();
    		Image::make($avatar)->resize(256,256)->save( public_path('/img/avatars/' . $filename ));

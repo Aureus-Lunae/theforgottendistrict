@@ -13,31 +13,32 @@
 	object-fit: cover
 }
 
+.alert {
+	display: block;
+	min-width: 300px;
+	max-width: 500px;
+	transform: skew(-15deg);
+	margin: 16px 0;
+}
+
+.alert_error {
+	background: $error;
+	color: $error_text;
+	font-size: 20px;
+	padding: 8px 16px;
+}
+
+.alert_success {
+	background: $quaternary;
+	color: $succes_text;
+	font-size: 20px;
+	padding: 8px 16px;
+}
+
 .form_container {
 	grid-area: main;
 	display: flex;
 	justify-content: center;
-
-	.alert {
-		min-width: 300px;
-		max-width: 500px;
-		transform: skew(-15deg);
-		margin: 16px 0;
-	}
-
-	.alert_error {
-		background: $error;
-		color: $error_text;
-		font-size: 20px;
-		padding: 8px 16px;
-	}
-
-	.alert_success {
-		background: $quaternary;
-		color: $succes_text;
-		font-size: 20px;
-		padding: 8px 16px;
-	}
 
 	h2 {
 		font-size: 24px;

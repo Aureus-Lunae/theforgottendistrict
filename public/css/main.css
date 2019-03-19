@@ -422,28 +422,32 @@ body {
   object-fit: cover;
 }
 
-.form_container {
-  grid-area: main;
-  display: flex;
-  justify-content: center;
-}
-.form_container .alert {
+.alert {
+  display: block;
   min-width: 300px;
   max-width: 500px;
   transform: skew(-15deg);
   margin: 16px 0;
 }
-.form_container .alert_error {
+
+.alert_error {
   background: #330000;
   color: #ff7a7a;
   font-size: 20px;
   padding: 8px 16px;
 }
-.form_container .alert_success {
+
+.alert_success {
   background: #15471c;
   color: #15ff00;
   font-size: 20px;
   padding: 8px 16px;
+}
+
+.form_container {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
 }
 .form_container h2 {
   font-size: 24px;
