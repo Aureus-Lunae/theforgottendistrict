@@ -5,6 +5,61 @@
 	flex-wrap: wrap;
 	justify-content: center;
 
+	a {
+		color: $primary-text;
+		text-decoration: none;
+	}
+
+	.card_small {
+		display: block;
+		width: 150px;
+		margin: 10px;
+		padding: 8px;
+		box-sizing: border-box;
+		border-bottom-right-radius: 8px;
+		box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+
+		.name {
+			position: relative;
+			margin: 0;
+			padding: 4px 0;
+			display: block;
+			text-align: center;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			font-size: 18px;
+			z-index: 1;
+
+			&:after {
+				content: '';
+				position: absolute;
+				background: $quaternary;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				transform: skew(-15deg);
+				z-index: -1;
+			}
+		}
+
+		.rank {
+			float: right;
+			font-size: 16
+		}
+
+		.avatar {
+			display: block;
+			margin: 16px auto;
+			text-align: center;
+
+			img {
+				width: 128px;
+				height: 128px;
+				border-radius: 50%;
+			}
+		}
+	}
 
 	.card {
 		display: block;

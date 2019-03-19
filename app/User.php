@@ -78,7 +78,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return $rank;
     }
 
-        public function hasRole($role) {
+    public function hasRole($role) {
         $value = $this->rank;
 
         if ($value < $role) {

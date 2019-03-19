@@ -26,6 +26,11 @@ class UserController extends Controller
    		Image::make($avatar)->resize(256,256)->save( public_path('/img/avatars/' . $filename ));
 
    		$user = Auth::user();
+      if ($user->avatar != 'default.jpg')
+      {
+        $destinationPath = '/img/avatars/';
+        File::delete(public_path($destinationPath . $user->avatar));
+      }
    		$user->avatar = $filename;
    		$user->save();
    	}

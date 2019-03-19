@@ -36,6 +36,39 @@
 	display: block;
 }
 
+.pagination {
+	margin: 8px 0;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+
+	.current a,
+	.first a,
+	.previous a,
+	.next a,
+	.last a {
+		margin: 0px 5px;
+		color: $primary-text;
+		padding: 8px 16px;
+		text-decoration: none;
+		text-align: center;
+		z-index: 1;
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			background: $navbar;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			transform: skew(-15deg);
+			z-index: -1;
+		}
+	}
+}
+
 .older a,
 .newer a {
 	color: $primary-text;

@@ -29,6 +29,11 @@ Route::get('/profile/changeDescr', 'UserController@showChangeDescrForm')->middle
 Route::post('/profile/changeDescr', 'UserController@changeDescr')->middleware('verified');
 Route::patch('/profile/avatar', 'UserController@updateAvatar')->middleware('verified');
 
+//Users Routes
+Route::resource('/users', 'UsersController')->middleware('verified', 'role:4');
+Route::delete('/users/{user}/avatar', 'UsersController@deleteAvatar');
+
+
 //News Routes
 Route::post('/news', 'NewsController@store')->middleware('verified', 'role:6');
 Route::get('/news/create', 'NewsController@create')->middleware('verified')->name('createNews', 'role:6');
