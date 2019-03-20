@@ -4,6 +4,7 @@
   <div class="form_container">
   	<div>
 	  	<h2>Change Descr</h2>
+      <a href="/profile">Back</a>
 
       @if (session('error'))
         <div class="alert alert_error">

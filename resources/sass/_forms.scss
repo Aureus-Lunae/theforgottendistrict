@@ -39,11 +39,38 @@
 	grid-area: main;
 	display: flex;
 	justify-content: center;
+	width: 100%;
+
+	.form_width {
+		width: 100%;
+	}
+
+	a {
+		display: inline-block;
+		margin: 8px 8px;
+		color: $primary-text;
+		text-decoration: none;
+		padding: 8px 16px;
+		z-index: 1;
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			background: $navbar;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			transform: skew(-15deg);
+			z-index: -1;
+		}
+	}
 
 	h2 {
 		font-size: 24px;
 		position: relative;
-		font-weight: 700px;
+		font-weight: 700;
 		padding: 10px 20px;
 		text-align: center;
 		color: $primary-text;
@@ -63,10 +90,11 @@
 	}
 
 	form {
+
 		input {
 			display: block;
 			min-width: 300px;
-			max-width: 500px;
+			max-width: 100%;
 			font-size: 20px;
 			padding: 2px 5px;
 			border-radius: 8px;
@@ -78,19 +106,60 @@
 			}
 		}
 
+		input[type="checkbox"],
+		input[type="radio"] {
+			display: inline-block;
+			min-width: 10px;
+			max-width: 16px;
+		}
+
+		.radio_options {
+			display: flex;
+			width: 100%;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+
+			.radio_main_label {
+				display: block;
+				width: 100px;
+			}
+
+			.radio_selection {
+				display: block;
+			}
+		}
+
+		.radiolabel {
+			display: inline-block;
+			font-size: 18px;
+		}
+
+		.checkbox_wrapper {
+			display: flex;
+			width: 100%;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+
+			.checkbox {
+				display: block;
+				margin: 8px;
+			}
+		}
+
+
 		textarea {
 			margin-top: 5px;
 			margin-bottom: 16px;
 			padding: 2px 5px;
 			font-size: 20px;
 			display: block;
-			min-width: 300px;
-			max-width: 500px;
+			width: 100%;
 			height: 300px;
 			border-radius: 8px;
 		}
 
 		label {
+			display: block;
 			font-size: 20px;
 			padding: 2px 5px;
 		}

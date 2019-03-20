@@ -43,4 +43,45 @@ class UsersController extends Controller
 
     return redirect('/users/' . $id);
   }
+
+  public function edit($id)
+  {
+    $user = user::find($id);
+
+    return view('users.edit', compact('user'));
+  }
+
+  public function update(Request $request, $id)
+  {
+    $user = user::find($id);
+    $user->desc = $request->get('descr');
+
+    if ( $request->has('staff') ) {
+      $user->staff = 1;
+    } else {
+      $user->staff = 0;
+    }
+
+    if ( $request->has('builder') ) {
+      $user->builder = 1;
+    } else {
+      $user->builder = 0;
+    }
+
+    if ( $request->has('event') ) {
+      $user->event = 1;
+    } else {
+      $user->event = 0;
+    }
+
+    $user->rank = $request->get('rank');
+
+    if ($request->get('rank') > 3 ) {
+      $user->staff = 1;
+    }
+
+    $user->save();
+
+    return redirect('/users/' . $id);
+  }
 }

@@ -88,6 +88,14 @@
 }
 
 @media (min-width: 1400px) {
+
+	.profile {
+		grid-template-columns: 260px 1fr;
+		grid-template-areas:
+			"avatar 	data"
+			"avatar 	data";
+	}
+
 	.page_wrapper {
 		grid-template-columns: 1fr 4fr 1fr;
 		grid-template-areas:

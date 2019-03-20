@@ -1,19 +1,30 @@
 /* Profile */
 
 .profile {
-	display: block;
+	display: grid;
+	grid-gap: 16px;
 	min-height: 260px;
+	grid-template-areas:
+		"avatar"
+		"data";
+
+	.avatar_wrapper {
+		display: flex;
+		justify-content: center;
+		grid-area: avatar;
+	}
 
 	.avatar {
 		width: 256px;
 		height: 256px;
-		float: left;
 		border-radius: 50%;
-		margin-right: 32px;
+	}
+
+	.data {
+		grid-area: data;
 	}
 
 	h2 {
-		display: inline-block;
 		position: relative;
 		font-size: 21px;
 		font-weight: 700;
@@ -34,6 +45,7 @@
 		}
 	}
 
+	.rank,
 	.joined {
 		font-style: italic;
 		font-size: 14px;
@@ -74,14 +86,18 @@
 	}
 
 	form {
-		display: block;
-		width: 300px;
+		display: flex;
+		width: 275px;
 		margin: 16px 8px;
+		justify-content: center;
+		flex-wrap: wrap;
 
 		label {
 			margin: 5px 0;
 			display: block;
 			margin-right: 8px;
+			width: 100%;
+			text-align: center;
 		}
 
 		.button {

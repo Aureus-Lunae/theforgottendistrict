@@ -5,11 +5,17 @@
 @section('content')
   <div class="main_container">
     <div class="profile">
-      <img src="/img/avatars/{{ $user->avatar }}" class="avatar">
-      <h2> {{ $user->name }}'s Profile </h2>
+      <div class="avatar_wrapper">
+        <img src="/img/avatars/{{ $user->avatar }}" class="avatar">
+      </div>
 
-      <div class="joined">Joined: {{ date('d-m-Y', strtotime($user->created_at)) }}</div>
-      <p class="descr">{!! nl2br(e($user->desc )) !!}</p>
+      <div class="data">
+        <h2> {{ $user->name }}'s Profile </h2>
+
+        <div class="rank"> {{$user->RankName}} </div>
+        <div class="joined">Joined: {{ date('d-m-Y', strtotime($user->created_at)) }}</div>
+        <p class="descr">{!! nl2br(e($user->desc )) !!}</p>
+      </div>
     </div>
   </div>
 
