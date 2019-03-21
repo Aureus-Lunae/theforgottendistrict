@@ -30,7 +30,7 @@ Route::post('/profile/changeDescr', 'UserController@changeDescr')->middleware('v
 Route::patch('/profile/avatar', 'UserController@updateAvatar')->middleware('verified');
 
 //Users Routes
-Route::resource('/users', 'UsersController')->middleware('verified', 'role:4');
+Route::resource('/users', 'UsersController')->middleware('verified', 'role:4', ['except' => 'show,index']);
 Route::delete('/users/{user}/avatar', 'UsersController@deleteAvatar');
 
 

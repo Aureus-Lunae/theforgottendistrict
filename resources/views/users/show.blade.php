@@ -28,16 +28,17 @@
       
         <div class="dashboard_links">
           <div class="links">
-            @if (Auth::user()->rank >= 6)
+            @if ( $user->rank < 5 || (Auth::user()->rank == 7 && $user->rank <= 7) || Auth::user()->rank == 8 )
+
               <div class="links">
                 <a href="/users/{{$user->id}}/edit">Edit User</a>
               </div>
             @endif
-          <form enctype="multipart/form-data" action="/users/{{$user->id}}/avatar" method="POST">
-            {{ method_field('DELETE') }}
-            {{ csrf_field() }}
-            <input type="submit" class="button" value="Delete Avatar"/> 
-          </form>
+            <form enctype="multipart/form-data" action="/users/{{$user->id}}/avatar" method="POST">
+              {{ method_field('DELETE') }}
+              {{ csrf_field() }}
+              <input type="submit" class="button" value="Delete Avatar"/> 
+            </form>
           </div>
         </div>
       </div>

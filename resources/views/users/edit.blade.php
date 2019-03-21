@@ -26,18 +26,18 @@
         <div class="radio_options">
           <label class="radio_main_label">Rank</label>
           <div class="radio_selection">
-            <div><input type="radio" name="rank" value="0" {{ $user->rank = 0 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Member</label></div>
-            <div><input type="radio" name="rank" value="1" {{ $user->rank = 1 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Donator</label></div>
-             <div><input type="radio" name="rank" value="2" {{ $user->rank = 2 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Special</label></div>
-            <div><input type="radio" name="rank" value="3" {{ $user->rank = 3 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Helper</label></div>
-             <div><input type="radio" name="rank" value="4" {{ $user->rank = 4 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Moderator</label></div>
-            <div><input type="radio" name="rank" value="5" {{ $user->rank = 5 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Admin</label></div>
+            <div><input type="radio" name="rank" value="0" {{ $user->rank == 0 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Member</label></div>
+            <div><input type="radio" name="rank" value="1" {{ $user->rank == 1 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Donator</label></div>
+             <div><input type="radio" name="rank" value="2" {{ $user->rank == 2 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Special</label></div>
+            <div><input type="radio" name="rank" value="3" {{ $user->rank == 3 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Helper</label></div>
+             <div><input type="radio" name="rank" value="4" {{ $user->rank == 4 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Moderator</label></div>
+            <div><input type="radio" name="rank" value="5" {{ $user->rank == 5 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Admin</label></div>
             @if (Auth::user()->rank >= 7)
-              <div><input type="radio" name="rank" value="6" {{ $user->rank = 6 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Head Admin</label></div>
-               <div><input type="radio" name="rank" value="7" {{ $user->rank = 7 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Developer</label></div>
+              <div><input type="radio" name="rank" value="6" {{ $user->rank == 6 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Head Admin</label></div>
+               <div><input type="radio" name="rank" value="7" {{ $user->rank == 7 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Developer</label></div>
              @endif
              @if (Auth::user()->rank >= 8)
-              <div><input type="radio" name="rank" value="8" {{ $user->rank = 8 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Founder</label></div>
+              <div><input type="radio" name="rank" value="8" {{ $user->rank == 8 ? ' checked="checked" ' : '' }}> <label class="radiolabel">Founder</label></div>
             @endif
           </div>
         </div>
