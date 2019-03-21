@@ -25,6 +25,21 @@ class UsersController extends Controller
     return view('users.index', compact('users'));
   }
 
+  public function create()
+  {
+    abort(404);
+  }
+
+  public function store()
+  {
+    abort(404);
+  }
+
+  public function delete($id)
+  {
+    abort(404);
+  }
+
   public function show($id)
   {
     $user = user::find($id);
