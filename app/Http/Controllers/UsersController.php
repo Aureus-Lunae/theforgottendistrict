@@ -13,7 +13,9 @@ class UsersController extends Controller
 
   public function __construct()
   {
-    $this->middleware('auth');
+    $this->middleware('verified');
+    $this->middleware('role:6')->except('index','show', 'deleteAvatar');
+    $this->middleware('role:5')->only('deleteAvatar');
   }
 
   public function index()
