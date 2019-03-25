@@ -53,7 +53,7 @@
 					<li> 
 						<input id="usermenu" type="checkbox" name="usermenu"/>
 						<label for="usermenu">
-							{{ Auth::user()->name }} </label>
+							{{ Auth::user()->display_name }} </label>
 						<ul class="submenu">
 							<li><a href={{ route('profile') }}>Profile</a></li>
 

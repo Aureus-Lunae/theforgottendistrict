@@ -41,3 +41,11 @@ Route::get('/news/create', 'NewsController@create')->middleware('verified', 'rol
 Route::get('/news/{news}/edit', 'NewsController@edit')->middleware('verified', 'role:6');
 Route::patch('/news/{news}', 'NewsController@update')->middleware('verified', 'role:6');
 Route::delete('/news/{news}', 'NewsController@destroy')->middleware('verified', 'role:6');
+
+//Event Routes
+Route::get('/events', 'IndexController@index')->middleware('verified', 'role:9');
+Route::post('/events', 'EventsController@store')->middleware('verified', 'role:6');
+Route::get('/events/create', 'EventsController@create')->middleware('verified', 'role:6')->name('createEvents');
+Route::get('/events/{event}/edit', 'EventsController@edit')->middleware('verified', 'role:6');
+Route::patch('/events/{event}', 'EventsController@update')->middleware('verified', 'role:6');
+Route::delete('/events/{event}', 'EventsController@destroy')->middleware('verified', 'role:6');

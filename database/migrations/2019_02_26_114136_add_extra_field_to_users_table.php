@@ -18,7 +18,7 @@ class AddExtraFieldToUsersTable extends Migration
             $table->longText('desc')->nullable();
             $table->tinyInteger('staff')->default(0);
             $table->tinyInteger('rank')->default(0);
-            $table->unique('name');
+            $table->unique('username');
         });
     }
 

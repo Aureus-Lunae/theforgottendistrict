@@ -16,7 +16,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar', 'desc', 'staff', 'rank', 'builder', 'event', 'banned'
+        'username', 'display_name', 'email', 'password', 'avatar', 'desc', 'staff', 'rank', 'builder', 'event', 'banned'
     ];
 
     /**
@@ -87,4 +87,13 @@ class User extends Authenticatable implements MustVerifyEmail
             return true;
         }
     }
+
+    public function getNameAttribute() {
+        return $this->display_name;
+    }
+
+    public function news(){
+        return $this->hasMany(news::class, 'user_id');
+    }
+
 }

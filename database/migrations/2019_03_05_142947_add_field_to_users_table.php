@@ -17,6 +17,7 @@ class AddFieldToUsersTable extends Migration
             $table->boolean('builder')->default(false);
             $table->boolean('event')->default(false);
             $table->boolean('banned')->default(false);
+            $table->date('banned_until')->nullable();
         });
     }
 
@@ -31,6 +32,7 @@ class AddFieldToUsersTable extends Migration
             $table->dropColumn('builder');
             $table->dropColumn('event');
             $table->dropColumn('banned');
+            $table->dropColumn('banned_until');
         });
     }
 }
