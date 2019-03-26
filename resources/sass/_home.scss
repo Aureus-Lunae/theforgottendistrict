@@ -93,6 +93,27 @@
 
 .events_container {
 	grid-area: side;
+
+	.event {
+		h2 {
+			font-size: 24px;
+			margin-bottom: 0;
+		}
+
+		.edit a {
+			color: $primary-text;
+			text-decoration: none;
+			float: right;
+			margin: 0 8px;
+			font-style: italic;
+		}
+
+		.author,
+		.date {
+			display: inline-block;
+			font-style: italic;
+		}
+	}
 }
 
 .content_title {

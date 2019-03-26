@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\news;
 use App\User;
+use App\Event;
 
 class IndexController extends Controller
 {
@@ -14,7 +15,12 @@ class IndexController extends Controller
     	$news = news::with('user')
                 ->orderBy('created_at','desc')
     			->simplePaginate(5);
-    	return view('index', compact('news'));
+
+        $events = event::with('user')
+                ->orderBy('when','desc')
+                ->orderBy('time','desc')
+                ->simplePaginate(5);
+    	return view('index', compact('news'), compact('events'));
     }
 
     public function rules(){

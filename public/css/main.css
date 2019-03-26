@@ -289,6 +289,22 @@ body {
 .events_container {
   grid-area: side;
 }
+.events_container .event h2 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+.events_container .event .edit a {
+  color: #e6e6e6;
+  text-decoration: none;
+  float: right;
+  margin: 0 8px;
+  font-style: italic;
+}
+.events_container .event .author,
+.events_container .event .date {
+  display: inline-block;
+  font-style: italic;
+}
 
 .content_title {
   position: relative;
