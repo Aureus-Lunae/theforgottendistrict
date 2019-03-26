@@ -50,3 +50,4 @@ Route::get('/events/create', 'EventsController@create')->middleware('verified', 
 Route::get('/events/{event}/edit', 'EventsController@edit')->middleware('verified', 'role:6');
 Route::patch('/events/{event}', 'EventsController@update')->middleware('verified', 'role:6');
 Route::delete('/events/{event}', 'EventsController@destroy')->middleware('verified', 'role:6');
+Route::get('/events/{event}')->middleware('verified', 'role:6');
