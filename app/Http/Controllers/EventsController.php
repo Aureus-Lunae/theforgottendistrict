@@ -41,7 +41,16 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = new event();
+
+        $event->title = request('title');
+        $event->event = request('event');
+        $event->user_id = auth()->user()->id;
+        $event->when = request('date');
+        $event->time = request('time');
+
+        $event->save();
+        return redirect('/');
     }
 
     /**
