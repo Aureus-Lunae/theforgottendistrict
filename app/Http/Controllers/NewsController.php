@@ -14,7 +14,7 @@ class NewsController extends Controller
 
     public function index()
     {
-        //
+        abort(404);
     }
 
     /**
@@ -39,7 +39,7 @@ class NewsController extends Controller
 
         $news->title = request('title');
         $news->news = request('news');
-        $news->user_name = auth()->user()->name;
+        $news->user_id = auth()->user()->id;
 
         $news->save();
         return redirect('/');
@@ -53,7 +53,7 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**

@@ -39,6 +39,7 @@ Route::get('/news', 'IndexController@index')->middleware('verified', 'role:9');
 Route::post('/news', 'NewsController@store')->middleware('verified', 'role:6');
 Route::get('/news/create', 'NewsController@create')->middleware('verified', 'role:6')->name('createNews');
 Route::get('/news/{news}/edit', 'NewsController@edit')->middleware('verified', 'role:6');
+Route::get('/news/{news}', 'NewsController@show')->middleware('verified', 'role:6');
 Route::patch('/news/{news}', 'NewsController@update')->middleware('verified', 'role:6');
 Route::delete('/news/{news}', 'NewsController@destroy')->middleware('verified', 'role:6');
 

@@ -15,7 +15,7 @@
          @endif
         @endif
          <div class="date">{{ date('d-m-Y', strtotime($newsArticle->created_at)) }}</div>
-         <div class="author">by {{ $newsArticle->user_name }}</div>
+         <div class="author">by {{ $newsArticle->user->name }}</div>
         <p>{!! nl2br(e($newsArticle->news)) !!}</p>
       </div>
     @endforeach
