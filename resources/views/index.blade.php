@@ -28,7 +28,9 @@
 
   </div>
 
-  <div class="events_container">
+  <div class="events_container
+
+">
     <h1 class="content_title">Events</h1>
     @foreach($events as $event)
     <div class="event">

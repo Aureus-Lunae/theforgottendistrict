@@ -11,7 +11,13 @@
       <input type="date" name="date" value="<?php echo gmdate('Y-m-d'); ?>" />
 
       <label for="time">Time in UTC</label>
-      <input type="time" name="time" value="18:00" />
+      <input type="time" name="time" value="00:00" />
+
+      <label for="enddate">End date (Only if it is different)</label>
+      <input type="date" name="enddate" />
+
+      <label for="endtime">End time in UTC (Only if end date is filled in)</label>
+      <input type="time" name="endtime" value="00:00" />
 
       <textarea name="event" placeholder="Event description"></textarea>
 
