@@ -12,13 +12,13 @@ class IndexController extends Controller {
 	public function index() {
 		$news = news::with('user')
 			->orderBy('created_at', 'desc')
-			->simplePaginate(1, ['*'], 'news');
+			->simplePaginate(3, ['*'], 'news');
 
 		$events = event::with('user')
 			->where('end', '>=', Carbon::now()->toDateString())
 			->orderBy('end', 'asc')
 			->orderBy('endtime', 'asc')
-			->simplePaginate(1, ['*'], 'events');
+			->simplePaginate(3, ['*'], 'events');
 		return view('index', compact('news'), compact('events'));
 	}
 
