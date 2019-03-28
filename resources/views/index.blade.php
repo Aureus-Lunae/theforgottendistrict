@@ -16,7 +16,9 @@
     @endif
     <div class="date">{{ date('d-m-Y', strtotime($newsArticle->created_at)) }}</div>
     <div class="author">by {{ $newsArticle->user->name }}</div>
-    <p>{!! nl2br(e($newsArticle->news)) !!}</p>
+      @markdown
+{{$newsArticle->news}}
+      @endmarkdown
   </div>
   @endforeach
 
@@ -53,7 +55,9 @@
     </div>
 
     <div class="author">by {{ $event->user->name }}</div>
-    <p>{!! nl2br(e($event->event)) !!}</p>
+      @markdown
+{{$event->event}}
+      @endmarkdown
   </div>
   @endforeach
 
