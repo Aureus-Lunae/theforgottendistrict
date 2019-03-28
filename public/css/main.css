@@ -207,6 +207,7 @@ body {
   margin-bottom: 0;
 }
 .news_container .news .edit a {
+  font-size: 0.9em;
   color: #e6e6e6;
   text-decoration: none;
   float: right;
@@ -215,6 +216,7 @@ body {
 }
 .news_container .news .author,
 .news_container .news .date {
+  font-size: 0.9em;
   display: inline-block;
   font-style: italic;
 }
@@ -294,6 +296,7 @@ body {
   margin-bottom: 0;
 }
 .events_container .event .edit a {
+  font-size: 0.9em;
   color: #e6e6e6;
   text-decoration: none;
   float: right;
@@ -302,6 +305,7 @@ body {
 }
 .events_container .event .author,
 .events_container .event .date {
+  font-size: 0.9em;
   display: inline-block;
   font-style: italic;
 }
