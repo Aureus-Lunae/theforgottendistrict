@@ -45,7 +45,7 @@ class EventsController extends Controller {
 		$event->user_id = auth()->user()->id;
 		$event->when = request('date');
 		$event->time = request('time');
-		if (request('enddate')) {
+		if (request('enddate') && request('enddate') < request('date')) {
 			$event->end = request('enddate');
 			$event->endtime = request('endtime');
 		} else {
@@ -74,7 +74,7 @@ class EventsController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit(Event $event) {
-		//
+		return view('events.edit', compact('event'));
 	}
 
 	/**
@@ -84,8 +84,22 @@ class EventsController extends Controller {
 	 * @param  \App\Event  $event
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, Event $event) {
-		//
+	public function update(EventsRequest $request, Event $event) {
+		$event->title = request('title');
+		$event->event = request('event');
+		$event->user_id = auth()->user()->id;
+		$event->when = request('date');
+		$event->time = request('time');
+		if (request('enddate') && request('enddate') < request('date')) {
+			$event->end = request('enddate');
+			$event->endtime = request('endtime');
+		} else {
+			$event->end = request('date');
+			$event->endtime = request('time');
+		}
+
+		$event->save();
+		return redirect('/');
 	}
 
 	/**
