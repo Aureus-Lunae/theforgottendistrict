@@ -5,15 +5,16 @@
 
 
 	.news {
-		h2 {
+		.title {
 			font-size: 24px;
 			margin-bottom: 0;
+			color: $navbar-text-hover;
 		}
 
 		.edit a {
+			color: $navbar-text-hover;
+			text-align: center;
 			font-size: 0.9em;
-			color: $primary-text;
-			text-decoration: none;
 			float: right;
 			margin: 0 8px;
 			font-style: italic;
@@ -93,19 +94,34 @@
 	}
 }
 
+.upcoming_container {
+	grid-area: main;
+}
+
 .events_container {
 	grid-area: side;
+}
+
+.upcoming_container,
+.events_container {
+
+	a {
+		font-style: italic;
+		color: $navbar-text-hover;
+		text-align: center;
+	}
 
 	.event {
-		h2 {
+		.title {
 			font-size: 24px;
 			margin-bottom: 0;
+			color: $navbar-text-hover;
 		}
 
 		.edit a {
+			color: $navbar-text-hover;
+			text-align: center;
 			font-size: 0.9em;
-			color: $primary-text;
-			text-decoration: none;
 			float: right;
 			margin: 0 8px;
 			font-style: italic;

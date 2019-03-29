@@ -34,6 +34,7 @@
 						<input id="info" type="checkbox" name="info" />
 						<label for="info">Server Info</label>
 						<ul class="submenu">
+							<li><a href="/events">Events</a></li>
 							<li><a href="/staff">Staff</a></li>
 							<li><a href="/rules">Rules</a></li>
 						</ul>

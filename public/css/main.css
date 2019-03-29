@@ -1,4 +1,5 @@
 body {
+  font-size: 16px;
   margin: 0;
   background: #471540;
   color: #e6e6e6;
@@ -202,14 +203,15 @@ body {
 .news_container {
   grid-area: main;
 }
-.news_container .news h2 {
+.news_container .news .title {
   font-size: 24px;
   margin-bottom: 0;
+  color: #00e6e6;
 }
 .news_container .news .edit a {
+  color: #00e6e6;
+  text-align: center;
   font-size: 0.9em;
-  color: #e6e6e6;
-  text-decoration: none;
   float: right;
   margin: 0 8px;
   font-style: italic;
@@ -288,21 +290,37 @@ body {
   z-index: -1;
 }
 
+.upcoming_container {
+  grid-area: main;
+}
+
 .events_container {
   grid-area: side;
 }
-.events_container .event h2 {
+
+.upcoming_container a,
+.events_container a {
+  font-style: italic;
+  color: #00e6e6;
+  text-align: center;
+}
+.upcoming_container .event .title,
+.events_container .event .title {
   font-size: 24px;
   margin-bottom: 0;
+  color: #00e6e6;
 }
+.upcoming_container .event .edit a,
 .events_container .event .edit a {
+  color: #00e6e6;
+  text-align: center;
   font-size: 0.9em;
-  color: #e6e6e6;
-  text-decoration: none;
   float: right;
   margin: 0 8px;
   font-style: italic;
 }
+.upcoming_container .event .author,
+.upcoming_container .event .date,
 .events_container .event .author,
 .events_container .event .date {
   font-size: 0.9em;
@@ -800,6 +818,32 @@ body {
   left: 0;
   transform: skew(-15deg);
   z-index: -1;
+}
+
+/* Markdown Formatting */
+.markdown h1 {
+  font-size: 21px;
+  margin-bottom: 0;
+}
+.markdown h2 {
+  font-size: 19px;
+  margin-bottom: 0;
+}
+.markdown a {
+  font-style: italic;
+  color: #00e6e6;
+  text-align: center;
+}
+.markdown img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+.markdown ul,
+.markdown ol,
+.markdown img,
+.markdown p {
+  margin: 8px 0;
 }
 
 /* Media Queries */

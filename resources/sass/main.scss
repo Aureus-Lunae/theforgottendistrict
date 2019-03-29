@@ -1,6 +1,7 @@
 @import 'variables';
 
 body {
+	font-size: 16px;
 	margin: 0;
 	background: $primary;
 	color: $primary-text;
@@ -73,6 +74,6 @@ body {
 @import 'rules';
 @import 'staff';
 @import 'profile';
-
+@import 'markdown';
 
 @import 'media';

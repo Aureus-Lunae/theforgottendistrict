@@ -7,7 +7,7 @@
 
   @foreach($news as $newsArticle)
   <div class="news">
-    <h2>{{ $newsArticle->title }}</h2>
+    <h2 class="title">{{ $newsArticle->title }}</h2>
     @guest
     @else
     @if (Auth::user()->staff == 1 && Auth::user()->rank >= 6)
@@ -16,9 +16,12 @@
     @endif
     <div class="date">{{ date('d-m-Y', strtotime($newsArticle->created_at)) }}</div>
     <div class="author">by {{ $newsArticle->user->name }}</div>
+
+    <div class="markdown">
       @markdown
 {{$newsArticle->news}}
       @endmarkdown
+    </div>
   </div>
   @endforeach
 
@@ -38,7 +41,7 @@
   <h1 class="content_title">Events</h1>
   @foreach($events as $event)
   <div class="event">
-    <h2>{{ $event->title }}</h2>
+    <h2 class="title">{{ $event->title }}</h2>
     @guest
     @else
     @if (Auth::user()->staff == 1 && Auth::user()->rank >= 6)
@@ -55,12 +58,13 @@
     </div>
 
     <div class="author">by {{ $event->user->name }}</div>
+    <div class="markdown">
       @markdown
 {{$event->event}}
       @endmarkdown
+    </div>
   </div>
   @endforeach
-
 
   @if ($events->nextPageUrl() )
   <div class="older">

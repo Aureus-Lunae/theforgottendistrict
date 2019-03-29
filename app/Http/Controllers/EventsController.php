@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Http\Requests\EventsRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EventsController extends Controller {
@@ -18,7 +19,18 @@ class EventsController extends Controller {
 	}
 
 	public function index() {
-		abort(404);
+		$upcomingEvents = event::with('user')
+			->where('end', '>=', Carbon::now()->toDateString())
+			->orderBy('end', 'asc')
+			->orderBy('endtime', 'asc')
+			->simplePaginate(5, ['*'], 'upcoming');
+
+		$pastEvents = event::with('user')
+			->where('end', '<', Carbon::now()->toDateString())
+			->orderBy('end', 'asc')
+			->orderBy('endtime', 'asc')
+			->simplePaginate(5, ['*'], 'past');
+		return view('events.index', compact('upcomingEvents'), compact('pastEvents'));
 	}
 
 	/**
