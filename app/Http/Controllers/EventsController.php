@@ -57,7 +57,7 @@ class EventsController extends Controller {
 		$event->user_id = auth()->user()->id;
 		$event->when = request('date');
 		$event->time = request('time');
-		if (request('enddate') && request('enddate') < request('date')) {
+		if (request('enddate')) {
 			$event->end = request('enddate');
 			$event->endtime = request('endtime');
 		} else {
@@ -102,7 +102,7 @@ class EventsController extends Controller {
 		$event->user_id = auth()->user()->id;
 		$event->when = request('date');
 		$event->time = request('time');
-		if (request('enddate') && request('enddate') < request('date')) {
+		if (request('enddate')) {
 			$event->end = request('enddate');
 			$event->endtime = request('endtime');
 		} else {
