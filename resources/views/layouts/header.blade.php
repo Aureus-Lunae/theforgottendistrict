@@ -25,7 +25,7 @@
 					<li><a href="/rules">Rules</a></li>
 				</ul>
 			</li>
-			<li><a href="/">Support Us</a></li>
+			<li><a href="/support">Support Us</a></li>
 			{{-- Authorization Links --}}
 			@guest
 				<li><a href={{ route('login') }}>{{ __('Login') }}</a></li>

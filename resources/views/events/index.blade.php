@@ -3,7 +3,7 @@
 @section('content')
 <div class="upcoming_container">
 
-  <h1 class="content_title">Upcoming Events</h1>
+  <h1 class="content_title"><i class="fas fa-calendar-alt"></i> Upcoming Events</h1>
   @foreach($upcomingEvents as $event)
   <div class="event">
     <h2 class="title">{{ $event->title }}</h2>
@@ -46,7 +46,7 @@
 
 <div class="events_container">
 
-  <h1 class="content_title">Past Events</h1>
+  <h1 class="content_title"><i class="fas fa-calendar-times"></i> Past Events</h1>
 
   @foreach($pastEvents as $past)
   <div class="event">

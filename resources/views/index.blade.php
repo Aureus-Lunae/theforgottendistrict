@@ -55,7 +55,7 @@ We have a dedicated discord server for you to join.
 <a name="news">
 <div class="news_container">
 
-  <h1 class="content_title">Server News</h1>
+  <h1 class="content_title"><i class="fas fa-newspaper"></i> Server News</h1>
 
   @foreach($news as $newsArticle)
   <div class="news">

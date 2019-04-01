@@ -45,10 +45,17 @@ body {
 	grid-area: content;
 }
 
-.reverse_content_wrapper,
+.reverse_content_wrapper {
+	display: grid;
+	grid-gap: 32px;
+	grid-template-areas:
+		"side"
+		"main"
+}
+
 .content_wrapper {
 	display: grid;
-	grid-gap: 16px;
+	grid-gap: 32px;
 	grid-template-areas:
 		"main"
 		"side"
@@ -80,6 +87,7 @@ body {
 @import 'rules';
 @import 'staff';
 @import 'profile';
+@import 'support';
 @import 'markdown';
 
 @import 'footer';
