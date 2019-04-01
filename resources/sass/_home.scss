@@ -1,8 +1,6 @@
 /* Home */
 
 .news_container {
-	grid-area: main;
-
 
 	.news {
 		padding: 0 4px 8px 4px;
@@ -166,4 +164,28 @@
 		transform: skew(-15deg);
 		z-index: -1;
 	}
+}
+
+.info_box {
+	max-width: 300px;
+	text-align: center;
+
+	.img_container {
+		display: flex;
+		justify-content: center;
+
+		img {
+			display: block;
+			width: 150px;
+			height: 150px;
+			object-fit: cover;
+		}
+	}
+}
+
+.home_page {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin: 16px 4px 24px 4px;
 }

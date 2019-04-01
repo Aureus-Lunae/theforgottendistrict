@@ -1,6 +1,57 @@
-@extends('layouts.reverse')
+@extends('layouts.full')
 
 @section('content')
+
+<div class="home_page">
+
+  <div class="info_box">
+    <div class="img_container">
+      <img src="/img/tfd_logo.svg" />
+    </div>
+    <div class="markdown">
+@markdown
+## The Forgotten District
+
+We are a medieval styled survival server.
+
+[Our staff](/staff)
+@endmarkdown
+    </div>
+  </div>
+
+  <div class="info_box">
+    <div class="img_container">
+      <img src="/img/site/stonecutter.svg" />
+    </div>
+    <div class="markdown">
+@markdown
+## Development
+
+We are working on new content and events every day.
+
+[News](#news) [Events](/events)
+@endmarkdown
+    </div>
+  </div>
+
+  <div class="info_box">
+    <div class="img_container">
+      <img src="/img/site/enchanting_table.svg" />
+    </div>
+    <div class="markdown">
+@markdown
+## Contact
+
+We have a dedicated discord server for you to join.
+
+[Discord](https://discord.gg/ZEXYTKt)
+@endmarkdown
+    </div>
+  </div>
+
+</div>
+
+<a name="news">
 <div class="news_container">
 
   <h1 class="content_title">Server News</h1>
@@ -37,8 +88,6 @@
   @endif
 </div>
 
-<div class="side_container">
 
-</div>
 
 @endsection

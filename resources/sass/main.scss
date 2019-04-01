@@ -10,7 +10,6 @@ body {
 
 .page_wrapper {
 	width: 100%;
-	grid-gap: 10px;
 	display: grid;
 	grid-template-areas:
 		"header"
@@ -36,13 +35,18 @@ body {
 }
 
 .reverse_content_wrapper,
-.content_wrapper {
+.content_wrapper,
+.full_content_wrapper {
 	padding: 10px;
 	box-sizing: border-box;
 	background: $primary;
+	grid-area: content;
+}
+
+.reverse_content_wrapper,
+.content_wrapper {
 	display: grid;
 	grid-gap: 16px;
-	grid-area: content;
 	grid-template-areas:
 		"main"
 		"side"
