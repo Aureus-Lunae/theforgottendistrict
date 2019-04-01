@@ -17,7 +17,7 @@
 	<div class="page_wrapper">
 		@include('layouts.header')
 
-		<div class="content_wrapper">
+		<div class="reverse_content_wrapper">
 			@yield('content')
 		</div>
 

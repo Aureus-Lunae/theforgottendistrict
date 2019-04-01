@@ -13,11 +13,11 @@
 		.title {
 			font-size: 24px;
 			margin-bottom: 0;
-			color: $navbar-text-hover;
+			color: $link-color;
 		}
 
 		.edit a {
-			color: $navbar-text-hover;
+			color: $link-color;
 			text-align: center;
 			font-size: 0.9em;
 			float: right;
@@ -112,7 +112,7 @@
 
 	a {
 		font-style: italic;
-		color: $navbar-text-hover;
+		color: $link-color;
 		text-align: center;
 	}
 
@@ -125,11 +125,11 @@
 		.title {
 			font-size: 24px;
 			margin-bottom: 0;
-			color: $navbar-text-hover;
+			color: $link-color;
 		}
 
 		.edit a {
-			color: $navbar-text-hover;
+			color: $link-color;
 			text-align: center;
 			font-size: 0.9em;
 			float: right;
@@ -152,7 +152,7 @@
 	font-weight: 700;
 	padding: 10px 20px;
 	text-align: center;
-	color: $navbar_text;
+	color: $navbar-text;
 	z-index: 1;
 
 	&:after {

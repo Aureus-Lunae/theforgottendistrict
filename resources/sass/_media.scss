@@ -16,6 +16,13 @@
 			"main 	side"
 			"main 	side";
 	}
+
+	.reverse_content_wrapper {
+		grid-template-columns: 1fr 2fr;
+		grid-template-areas:
+			"side 	main"
+			"side 	main";
+	}
 }
 
 @media (min-width: 1000px) {
@@ -111,4 +118,12 @@
 			"main 	side"
 			"main 	side";
 	}
+
+	.reverse_content_wrapper {
+		grid-template-columns: 1fr 3fr;
+		grid-template-areas:
+			"side 	main"
+			"side 	main";
+	}
+
 }

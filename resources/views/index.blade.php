@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layouts.reverse')
 
 @section('content')
 <div class="news_container">
@@ -37,45 +37,8 @@
   @endif
 </div>
 
-<div class="events_container">
-  <h1 class="content_title">Events</h1>
-  @foreach($events as $event)
-  <div class="event">
-    <h2 class="title">{{ $event->title }}</h2>
-    @guest
-    @else
-    @if (Auth::user()->staff == 1 && Auth::user()->rank >= 6)
-    <div class='edit'><a href="/events/{{$event->id}}/edit"> edit </a></div>
-    @endif
-    @endif
-    <div class="date">
-      Starts: {{ date('d-m-Y', strtotime($event->when)) }} {{ $event->showTime }}
-      @if ($event->when != $event->end)
-      <div>
-        Ends: {{ date('d-m-Y', strtotime($event->end)) }} {{ $event->showEndtime }}
-      </div>
-      @endif
-    </div>
+<div class="side_container">
 
-    <div class="author">by {{ $event->user->name }}</div>
-    <div class="markdown">
-      @markdown
-{{$event->event}}
-      @endmarkdown
-    </div>
-  </div>
-  @endforeach
-
-  @if ($events->nextPageUrl() )
-  <div class="older">
-    <a href="{{ $events->nextPageUrl() }}"> <<< Previous </a>
-  </div>
-  @endif
-  @if ($events->previousPageUrl() )
-  <div class="newer">
-    <a href="{{ $events->previousPageUrl() }}"> Next >>> </a>
-  </div>
-  @endif
 </div>
 
 @endsection
