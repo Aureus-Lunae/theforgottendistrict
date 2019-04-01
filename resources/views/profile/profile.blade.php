@@ -10,18 +10,22 @@
     </div>
 
     <div class="data">
-      <h2> {{ $user->name }}'s Profile </h2>
+      <h2 class="title"> {{ $user->name }}'s Profile </h2>
 
       <div class="rank"> {{$user->RankName}} </div>
       <div class="joined">Joined: {{ date('d-m-Y', strtotime($user->created_at)) }}</div>
-      <p class="descr">{!! nl2br(e($user->desc )) !!}</p>
+      <div class="descr markdown">
+        @markdown
+{{$user->desc}}
+        @endmarkdown
+      </div>
     </div>
   </div>
 </div>
 
 <div class="side_container">
   <div class="dashboard">
-    <h2>Dashboard</h2>
+    <h2 class="title">Dashboard</h2>
 
     <div class="dashboard_links">
       <div class="links">
@@ -42,7 +46,7 @@
     </div>
 
     @if (Auth::user()->staff == 1 && Auth::user()->rank >= 3)
-    <h2>Staff Dashboard</h2>
+    <h2 class="title">Staff Dashboard</h2>
     <div class="dashboard_links">
       <div class="links">
         @if (Auth::user()->rank >= 4)

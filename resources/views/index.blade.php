@@ -8,7 +8,7 @@
     <div class="img_container">
       <img src="/img/tfd_logo.svg" />
     </div>
-    <div class="markdown">
+    <div class="markdown homelinks">
 @markdown
 ## The Forgotten District
 
@@ -23,7 +23,7 @@ We are a medieval styled survival server.
     <div class="img_container">
       <img src="/img/site/stonecutter.svg" />
     </div>
-    <div class="markdown">
+    <div class="markdown homelinks">
 @markdown
 ## Development
 
@@ -38,7 +38,7 @@ We are working on new content and events every day.
     <div class="img_container">
       <img src="/img/site/enchanting_table.svg" />
     </div>
-    <div class="markdown">
+    <div class="markdown homelinks">
 @markdown
 ## Contact
 

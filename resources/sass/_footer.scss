@@ -1,0 +1,42 @@
+/* Footer */
+
+.footer_wrapper {
+	font-family: 'Laila', serif;
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	color: $navbar-text;
+	background: $navbar;
+	font-size: 16px;
+
+	.media {
+		font-size: 48px;
+
+		a {
+			color: $navbar-text;
+			margin: 8px;
+
+			&:hover {
+				color: $navbar-text-hover;
+			}
+		}
+	}
+
+	.box {
+		margin: 16px 24px;
+		width: 300px;
+		text-align: center;
+
+		.img_container {
+			display: block;
+			height: 75px;
+		}
+
+		img {
+			object-fit: cover;
+			height: 100%;
+		}
+	}
+}

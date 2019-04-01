@@ -10,7 +10,9 @@ body {
 
 .page_wrapper {
 	width: 100%;
+	min-height: 100vh;
 	display: grid;
+	grid-template-rows: auto 1fr auto auto auto;
 	grid-template-areas:
 		"header"
 		"content"
@@ -80,4 +82,5 @@ body {
 @import 'profile';
 @import 'markdown';
 
+@import 'footer';
 @import 'media';

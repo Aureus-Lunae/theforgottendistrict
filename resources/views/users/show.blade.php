@@ -10,11 +10,15 @@
       </div>
 
       <div class="data">
-        <h2> {{ $user->name }}'s Profile </h2>
-        
+        <h2 class="title"> {{ $user->name }}'s Profile </h2>
+
         <div class="rank"> {{$user->RankName}} </div>
         <div class="joined">Joined: {{ date('d-m-Y', strtotime($user->created_at)) }}</div>
-        <p class="descr">{!! nl2br(e($user->desc )) !!}</p>
+        <div class="descr markdown">
+          @markdown
+{{$user->desc}}
+          @endmarkdown
+        </div>
       </div>
     </div>
   </div>
@@ -24,8 +28,8 @@
   <div class="side_container">
     @if (Auth::user()->staff == 1 && Auth::user()->rank >= 5)
       <div class="dashboard">
-        <h2>Staff Dashboard</h2>
-      
+        <h2 class="title">Staff Dashboard</h2>
+
         <div class="dashboard_links">
           <div class="links">
             @if ( $user->rank < 5 || (Auth::user()->rank == 7 && $user->rank <= 7) || Auth::user()->rank == 8 )
@@ -37,7 +41,7 @@
             <form enctype="multipart/form-data" action="/users/{{$user->id}}/avatar" method="POST">
               {{ method_field('DELETE') }}
               {{ csrf_field() }}
-              <input type="submit" class="button" value="Delete Avatar"/> 
+              <input type="submit" class="button delete" value="Delete Avatar"/>
             </form>
           </div>
         </div>
