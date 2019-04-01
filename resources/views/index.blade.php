@@ -51,6 +51,7 @@ We have a dedicated discord server for you to join.
 
 </div>
 
+
 <a name="news">
 <div class="news_container">
 
