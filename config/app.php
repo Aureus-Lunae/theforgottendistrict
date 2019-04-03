@@ -13,7 +13,7 @@ return [
 		    |
 	*/
 
-	'name' => env('APP_NAME', 'Laravel'),
+	'name' => env('APP_NAME', 'The Forgotten District'),
 
 	/*
 		    |--------------------------------------------------------------------------
@@ -176,6 +176,7 @@ return [
 		App\Providers\EventServiceProvider::class,
 		App\Providers\RouteServiceProvider::class,
 		GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+		RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
 
 	],
 
