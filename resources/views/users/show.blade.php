@@ -10,7 +10,7 @@
       </div>
 
       <div class="data">
-        <h2 class="title"> {{ $user->name }}'s Profile </h2>
+        <h2 class="title"><i class="fas fa-user"></i> {{ $user->name }}'s Profile </h2>
 
         <div class="rank"> {{$user->RankName}} </div>
         <div class="joined">Joined: {{ date('d-m-Y', strtotime($user->created_at)) }}</div>
@@ -28,7 +28,7 @@
   <div class="side_container">
     @if (Auth::user()->staff == 1 && Auth::user()->rank >= 5)
       <div class="dashboard">
-        <h2 class="title">Staff Dashboard</h2>
+        <h2 class="title"><i class="fas fa-eye"></i> Staff Dashboard</h2>
 
         <div class="dashboard_links">
           <div class="links">

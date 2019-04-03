@@ -52,7 +52,7 @@ We have a dedicated discord server for you to join.
 </div>
 
 
-<a name="news">
+<a name="news"></a>
 <div class="news_container">
 
   <h1 class="content_title"><i class="fas fa-newspaper"></i> Server News</h1>

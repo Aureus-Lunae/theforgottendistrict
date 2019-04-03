@@ -1,24 +1,29 @@
-@extends('master')
+@extends('layouts.full')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
 
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
+<div class="home_page">
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
-                </div>
-            </div>
-        </div>
+  <div class="info_box">
+    <div class="img_container">
+      <img src="/img/tfd_logo.svg" />
     </div>
+    <div class="markdown homelinks">
+      @markdown
+## Verify Your Email Address
+
+Before proceeding, please check your email for a verification link.
+
+[Resend email]({{ route('verification.resend') }})
+      @endmarkdown
+
+      @if (session('resent'))
+        <div class="alert alert_success" role="alert">
+          A fresh verification link has been sent to your email address.
+        </div>
+      @endif
+    </div>
+  </div>
 </div>
+
 @endsection

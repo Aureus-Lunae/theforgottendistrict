@@ -18,20 +18,20 @@
       @endif
 
 	    <form method="POST" action="/profile/changePassword">
-	      {{ csrf_field() }}
+	      @csrf
 
 	      <label>Current Password</label>
 	      <input type="password" name="currentPassword" required />
-	      
+
 	      <label>New Password</label>
 	      <input type="password" name="newPassword" required />
 	      <label>Confirm New Password</label>
 	      <input type="password" name="newPassword_confirmation" required />
 
-	      <input type="submit" class="button" /> 
+	      <input type="submit" class="button" value="Change Password"/>
 	    </form>
 	  </div>
-    
+
   </div>
 
   <div class="side_container">

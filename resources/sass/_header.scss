@@ -91,7 +91,7 @@
 			align-items: center;
 
 			span {
-				background: $primary-text;
+				background: $navbar-text;
 				display: block;
 				height: 4px;
 				position: relative;
@@ -100,7 +100,7 @@
 
 				&:before,
 				&:after {
-					background: $primary-text;
+					background: $navbar-text;
 					content: '';
 					display: block;
 					height: 100%;

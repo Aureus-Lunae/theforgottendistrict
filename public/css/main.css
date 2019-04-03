@@ -155,7 +155,7 @@ body {
   align-items: center;
 }
 .header_wrapper .navigation .menu_button span {
-  background: #1a1a1a;
+  background: #e6e6e6;
   display: block;
   height: 4px;
   position: relative;
@@ -163,7 +163,7 @@ body {
   border-radius: 2px;
 }
 .header_wrapper .navigation .menu_button span:before, .header_wrapper .navigation .menu_button span:after {
-  background: #1a1a1a;
+  background: #e6e6e6;
   content: "";
   display: block;
   height: 100%;
@@ -487,6 +487,7 @@ body {
 }
 
 .form_container {
+  margin-top: 24px;
   grid-area: main;
   display: flex;
   justify-content: center;
@@ -1162,7 +1163,7 @@ body {
   .header_wrapper .navigation .nav_links label {
     display: block;
     float: left;
-    max-width: 180px;
+    max-width: 200px;
   }
   .header_wrapper .navigation .nav_links > li {
     float: left;

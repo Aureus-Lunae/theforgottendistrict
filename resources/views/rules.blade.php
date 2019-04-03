@@ -5,7 +5,7 @@
 @section('content')
 <div class="rules_container">
 
-  <h1 class="content_title">Rules</h1>
+  <h1 class="content_title"><i class="fas fa-ban"></i> Rules</h1>
   <div class="rules_header">
     <p>The following rules are to be abide by every player. If a player is found breaking any of the rules, action will be taken against them.</p>
     <p class="subtext">These rules apply to anyone and anywhere. (Forum, private message, local chat etc.)</p>
@@ -15,7 +15,7 @@
 
     {{-- Chat Rules --}}
     <div class="rules">
-      <h2>Chat Rules</h2>
+      <h2><i class="fas fa-comment-alt"></i> Chat Rules</h2>
 
       <div class="rule">No Caps Abuse</div>
       <div class="rule_explaination">It's easy, stick to a maximum of 1 sentence.</div>
@@ -47,7 +47,7 @@
 
     {{-- TP Rules --}}
     <div class="rules">
-      <h2>TP Rules</h2>
+      <h2><i class="fas fa-walking"></i> TP Rules</h2>
 
       <div class="rule">TP Spam</div>
       <div class="rule_explaination">Don't spam the person you are trying to Teleport to, especially if they have declined.</div>
@@ -58,7 +58,7 @@
 
     {{-- Client Mod Rules --}}
     <div class="rules">
-      <h2>Client Mod Rules</h2>
+      <h2><i class="fas fa-bug"></i> Client Mod Rules</h2>
 
       <div class="rule">No Movement Hacks</div>
       <div class="rule_explaination">Speed, Fly, No-Clip, Free aim, etc</div>
@@ -75,7 +75,7 @@
 
     {{-- Building Rules --}}
     <div class="rules">
-      <h2>Building Rules</h2>
+      <h2><i class="fas fa-hammer"></i> Building Rules</h2>
 
       <div class="rule">No Inappropriate Builds</div>
       <div class="rule_explaination">No Swastikas, Genitals, etc</div>
@@ -92,7 +92,7 @@
 
     {{-- Skin and IGN Rules --}}
     <div class="rules">
-      <h2>Skin and IGN Rules</h2>
+      <h2><i class="fas fa-user-injured"></i> Skin and IGN Rules</h2>
 
       <div class="rule">No Inappropriate Skins</div>
       <div class="rule_explaination">No inappropriate or offensive skins.</div>
