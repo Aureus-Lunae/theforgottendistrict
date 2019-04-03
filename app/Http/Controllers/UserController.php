@@ -26,7 +26,11 @@ class UserController extends Controller {
 			$avatar = $request->file('avatar');
 
 			$filename = time() . '.' . $avatar->getClientOriginalExtension();
-			Image::make($avatar)->resize(256, 256)->save(public_path($destinationPath . $filename));
+			Image::make($avatar)->resize(null, 256, function ($constraint) {
+				$constraint->aspectRatio();
+			})
+				->resizeCanvas(256, 256, 'center')
+				->save(public_path($destinationPath . $filename));
 
 			$user = Auth::user();
 			if ($user->avatar != 'default.jpg') {
