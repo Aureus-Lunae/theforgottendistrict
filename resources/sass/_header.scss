@@ -123,7 +123,7 @@
 
 		/* Menu on */
 		.menu_toggle:checked~.nav_links {
-			max-height: 100vh;
+			max-height: 1000px;
 		}
 
 		.menu_toggle:checked~.menu_button span {

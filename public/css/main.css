@@ -179,7 +179,7 @@ body {
   top: 10px;
 }
 .header_wrapper .navigation .menu_toggle:checked ~ .nav_links {
-  max-height: 100vh;
+  max-height: 1000px;
 }
 .header_wrapper .navigation .menu_toggle:checked ~ .menu_button span {
   background: transparent;
