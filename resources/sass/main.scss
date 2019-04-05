@@ -41,7 +41,7 @@ body {
 .full_content_wrapper {
 	padding: 10px;
 	box-sizing: border-box;
-	background: $tertiary;
+	background: $tertiary url('/img/site/background.png');
 	grid-area: content;
 }
 
