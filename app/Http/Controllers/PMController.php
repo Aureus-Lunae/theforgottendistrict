@@ -25,11 +25,16 @@ class PMController extends Controller {
 			->orderBy('created_at', 'desc')
 			->simplePaginate(20, ['*'], 'received');
 
+		return view('profile.pm.index', compact('received'));
+	}
+
+	public function Outgoing() {
 		$sent = PM::with('receiver')
 			->where('sender_id', '=', auth()->user()->id)
 			->orderBy('created_at', 'desc')
 			->simplePaginate(20, ['*'], 'sent');
-		return redirect('/', compact('received'), compact('sent'));
+
+		return view('profile.pm.outgoing', compact('sent'));
 	}
 
 	/**

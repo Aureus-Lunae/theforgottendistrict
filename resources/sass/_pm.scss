@@ -1,0 +1,92 @@
+/* PM */
+
+.pm_container {
+	grid-area: main;
+}
+
+.pm_side_container {
+	grid-area: side;
+}
+
+.pm_container,
+.pm_side_container {
+
+	.links {
+		display: flex;
+		justify-content: center;
+		margin: 8px;
+		flex-wrap: wrap;
+
+		a {
+			width: 75%;
+			display: block;
+			margin: 8px 0;
+			color: $primary-text;
+			text-decoration: none;
+			padding: 8px 16px;
+			z-index: 1;
+			position: relative;
+			text-align: center;
+
+			&:after {
+				content: '';
+				position: absolute;
+				background: $quaternary;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				transform: skew(-15deg);
+				z-index: -1;
+			}
+		}
+	}
+
+	.pm {
+
+		cursor: pointer;
+
+		a {
+			width: 100%;
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			color: $primary_text;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		.time,
+		.sender,
+		.receiver,
+		.title {
+			display: flex;
+			align-items: center;
+			margin: 0 8px;
+			padding: 8px;
+			min-width: 100px;
+			box-sizing: border-box;
+			cursor: pointer;
+		}
+
+		.sender,
+		.receiver,
+		.title
+		{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.time,
+		.sender,
+		.receiver {
+			width: 20%;
+		}
+
+		.title {
+			width: 50%;
+		}
+
+	}
+}

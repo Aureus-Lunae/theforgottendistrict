@@ -28,7 +28,8 @@ Route::post('/profile/changeDescr', 'UserController@changeDescr')->middleware('v
 Route::patch('/profile/avatar', 'UserController@updateAvatar')->middleware('verified');
 
 //PM Routes
-Route::resource('/dashboard/pm', 'PMController')->middleware('verified');
+Route::get('/dashboard/pm/outbox', 'PMController@Outgoing');
+Route::resource('/dashboard/pm', 'PMController');
 
 //Users Routes
 Route::resource('/users', 'UsersController');

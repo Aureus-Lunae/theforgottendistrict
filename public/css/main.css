@@ -1063,6 +1063,99 @@ body {
   margin-right: 2px;
 }
 
+/* PM */
+.pm_container {
+  grid-area: main;
+}
+
+.pm_side_container {
+  grid-area: side;
+}
+
+.pm_container .links,
+.pm_side_container .links {
+  display: flex;
+  justify-content: center;
+  margin: 8px;
+  flex-wrap: wrap;
+}
+.pm_container .links a,
+.pm_side_container .links a {
+  width: 75%;
+  display: block;
+  margin: 8px 0;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 8px 16px;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+}
+.pm_container .links a:after,
+.pm_side_container .links a:after {
+  content: "";
+  position: absolute;
+  background: #66d9ff;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: skew(-15deg);
+  z-index: -1;
+}
+.pm_container .pm,
+.pm_side_container .pm {
+  cursor: pointer;
+}
+.pm_container .pm a,
+.pm_side_container .pm a {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: #1a1a1a;
+  text-align: center;
+  text-decoration: none;
+}
+.pm_container .pm .time,
+.pm_container .pm .sender,
+.pm_container .pm .receiver,
+.pm_container .pm .title,
+.pm_side_container .pm .time,
+.pm_side_container .pm .sender,
+.pm_side_container .pm .receiver,
+.pm_side_container .pm .title {
+  display: flex;
+  align-items: center;
+  margin: 0 8px;
+  padding: 8px;
+  min-width: 100px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.pm_container .pm .sender,
+.pm_container .pm .receiver,
+.pm_container .pm .title,
+.pm_side_container .pm .sender,
+.pm_side_container .pm .receiver,
+.pm_side_container .pm .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pm_container .pm .time,
+.pm_container .pm .sender,
+.pm_container .pm .receiver,
+.pm_side_container .pm .time,
+.pm_side_container .pm .sender,
+.pm_side_container .pm .receiver {
+  width: 20%;
+}
+.pm_container .pm .title,
+.pm_side_container .pm .title {
+  width: 50%;
+}
+
 /* Markdown Formatting */
 .markdown h1 {
   font-size: 21px;
