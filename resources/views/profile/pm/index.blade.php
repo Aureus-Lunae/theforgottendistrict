@@ -7,7 +7,7 @@
 
     @foreach($received as $incoming)
       <div class="pm">
-        <a href="{{ $incoming->id }}">
+        <a href="/dashboard/pm/{{ $incoming->id }}">
           @if ($incoming->read)
             <i class="fas fa-envelope-open"></i>
           @else

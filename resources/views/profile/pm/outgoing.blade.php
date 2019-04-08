@@ -7,7 +7,7 @@
 
     @foreach($sent as $outgoing)
       <div class="pm">
-        <a href="{{ $outgoing->id }}">
+        <a href="/dashboard/pm/{{ $outgoing->id }}">
           <label class="sender">{{ $outgoing->receiver->name }}</label>
           <label class="title">{{ $outgoing->title }}</label>
           <label class="time">{{ date('d M', strtotime($outgoing->created_at)) }}</label>

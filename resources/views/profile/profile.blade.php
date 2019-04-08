@@ -29,6 +29,7 @@
 
     <div class="dashboard_links">
       <div class="links">
+        <a href="/dashboard/pm">PM</a>
         <a href="/profile/changePassword">Change Password</a>
         <a href="/profile/changeDescr">Change Description</a>
       </div>

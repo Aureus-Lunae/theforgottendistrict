@@ -1103,6 +1103,32 @@ body {
   transform: skew(-15deg);
   z-index: -1;
 }
+.pm_container .users,
+.pm_side_container .users {
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+  width: 150px;
+}
+.pm_container .date,
+.pm_side_container .date {
+  display: flex;
+  flex-wrap: wrap;
+  float: right;
+  width: 150px;
+}
+.pm_container .msgtitle,
+.pm_side_container .msgtitle {
+  font-size: 22px;
+  font-weight: 700;
+  clear: both;
+  padding-top: 16px;
+  border-bottom: 1px solid #1a1a1a;
+}
+.pm_container .msg,
+.pm_side_container .msg {
+  clear: both;
+}
 .pm_container .pm,
 .pm_side_container .pm {
   cursor: pointer;
@@ -1126,6 +1152,7 @@ body {
 .pm_side_container .pm .sender,
 .pm_side_container .pm .receiver,
 .pm_side_container .pm .title {
+  text-align: left;
   margin: 0 8px;
   padding: 8px;
   box-sizing: border-box;

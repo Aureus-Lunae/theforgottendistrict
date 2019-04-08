@@ -78,8 +78,18 @@ class PMController extends Controller {
 	 * @param  \App\PM  $pM
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(PM $pm) {
-		//
+	public function show($id) {
+
+		$pm = PM::with('sender')
+			->with('receiver')
+			->find($id);
+
+		if ($pm->receiver_id == auth()->user()->id) {
+			$pm->read = true;
+			$pm->save();
+		}
+
+		return view('profile.pm.show', compact('pm'));
 	}
 
 	/**
