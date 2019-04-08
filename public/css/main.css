@@ -1,7 +1,7 @@
 body {
   font-size: 16px;
   margin: 0;
-  background: #f0f0f0;
+  background: #fafafa;
   color: #1a1a1a;
   font-family: "Montserrat", sans-serif;
 }
@@ -516,7 +516,7 @@ body {
   left: 0;
   transform: skew(-15deg);
   z-index: -1;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #fafafa;
 }
 .form_container h2 {
   font-size: 24px;
