@@ -547,6 +547,7 @@ body {
   border-radius: 8px;
   margin-bottom: 16px;
   outline: none;
+  border: #e6e6e6 2px inset;
 }
 .form_container form input:focus {
   border: #66d9ff 2px inset;
@@ -573,6 +574,7 @@ body {
 .form_container form .radiolabel {
   display: inline-block;
   font-size: 18px;
+  font-weight: 400;
 }
 .form_container form .checkbox_wrapper {
   display: flex;
@@ -593,11 +595,18 @@ body {
   width: 100%;
   height: 300px;
   border-radius: 8px;
+  resize: none;
+  outline: none;
+  border: #e6e6e6 2px inset;
+}
+.form_container form textarea:focus {
+  border: #66d9ff 2px inset;
 }
 .form_container form label {
   display: block;
   font-size: 20px;
   padding: 2px 5px;
+  font-weight: 700;
 }
 .form_container form .button {
   width: 250px;
