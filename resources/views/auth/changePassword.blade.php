@@ -17,6 +17,12 @@
        	</div>
       @endif
 
+      @if ($errors->any())
+        @foreach ($errors->all() as $error)
+          <label class='alert alert_error'>{{ $error }}</label>
+        @endforeach
+      @endif
+
 	    <form method="POST" action="/profile/changePassword">
 	      @csrf
 

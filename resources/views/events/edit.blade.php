@@ -1,37 +1,44 @@
 @extends('master')
 @section('content')
-<div class="form_container">
-  <div>
-    <h2>Post Event</h2>
-    <form method="POST" action="/events/{{$event->id}}">
+  <div class="form_container">
+    <div class="form_width">
+      <h2>Post Event</h2>
 
-      @csrf
-      @method('PATCH')
+      @if ($errors->any())
+        @foreach ($errors->all() as $error)
+          <label class='alert alert_error'>{{ $error }}</label>
+        @endforeach
+      @endif
 
-      <label for="date">Event Title</label>
-      <input type="text" name="title" value="{{old('title') ? old('title') : $event->title }}" />
+      <form method="POST" action="/events/{{$event->id}}">
 
-      <label for="date">Date of the event</label>
-      <input type="date" name="date" value="{{ old('date') ? old('date') : $event->when }}" />
+        @csrf
+        @method('PATCH')
 
-      <label for="time">Time in UTC</label>
-      <input type="time" name="time" value="{{old('time') ? old('time') : $event->time }}" />
+        <label for="date">Event Title</label>
+        <input type="text" name="title" value="{{old('title') ? old('title') : $event->title }}" />
 
-      <label for="enddate">End date</label>
-      <input type="date" name="enddate" value="{{old('enddate') ? old('enddate') : $event->end}}" />
+        <label for="date">Date of the event</label>
+        <input type="date" name="date" value="{{ old('date') ? old('date') : $event->when }}" />
 
-      <label for="endtime">End time in UTC</label>
-      <input type="time" name="endtime" value="{{old('endtime') ? old('endtime') : $event->endtime}}" />
+        <label for="time">Time in UTC</label>
+        <input type="time" name="time" value="{{old('time') ? old('time') : $event->time }}" />
 
-      <textarea name="event" placeholder="Event description">{{old('event') ? old('event') : $event->event}}</textarea>
+        <label for="enddate">End date</label>
+        <input type="date" name="enddate" value="{{old('enddate') ? old('enddate') : $event->end}}" />
 
-      <input type="submit" class="button" />
-    </form>
+        <label for="endtime">End time in UTC</label>
+        <input type="time" name="endtime" value="{{old('endtime') ? old('endtime') : $event->endtime}}" />
+
+        <textarea name="event" placeholder="Event description">{{old('event') ? old('event') : $event->event}}</textarea>
+
+        <input type="submit" class="button" />
+      </form>
+    </div>
   </div>
-</div>
-<div class="side_container">
-  <div class="form_center_v">
-    <img src="/img/site/book.png" alt="news" class="form_img" />
+  <div class="side_container">
+    <div class="form_center_v">
+      <img src="/img/site/book.png" alt="news" class="form_img" />
+    </div>
   </div>
-</div>
 @endsection

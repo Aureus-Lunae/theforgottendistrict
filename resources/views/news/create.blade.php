@@ -2,15 +2,24 @@
 
 @section('content')
   <div class="form_container">
-  	<div>
-  		<h2>Post News</h2>
+  	<div class="form_width">
+    	<h2>Post News</h2>
 
-	    <form method="POST" action="/news">
-	      {{ csrf_field() }}
-	      <input type="text" name="title" placeholder="news title" />
-	      <textarea name="news" placeholder="news"></textarea>
-	      <input type="submit" class="button" /> 
-	    </form>
+      @if ($errors->any())
+        @foreach ($errors->all() as $error)
+          <label class='alert alert_error'>{{ $error }}</label>
+        @endforeach
+      @endif
+
+      <form method="POST" action="/news">
+        {{ csrf_field() }}
+        <label for="title">News Title</label>
+       <input type="text" name="title" placeholder="news title" />
+
+        <label for="news">News</label>
+        <textarea name="news" placeholder="news" maxlength="3000"></textarea>
+        <input type="submit" class="button" />
+      </form>
     </div>
   </div>
 

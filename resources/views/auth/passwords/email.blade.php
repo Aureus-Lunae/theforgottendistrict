@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="form_container">
-    <div>
+    <div class="form_width">
 
       <h2>{{ __('Reset Password') }}</h2>
 
@@ -17,6 +17,12 @@
         </div>
       @endif
 
+      @if ($errors->any())
+        @foreach ($errors->all() as $error)
+          <label class='alert alert_error'>{{ $error }}</label>
+        @endforeach
+      @endif
+
       @if (session('status'))
         <div class="alert alert_success" role="alert">
           {{ session('status') }}
@@ -29,12 +35,6 @@
         <label for="email">{{ __('E-Mail Address') }}</label>
 
         <input id="email" type="email" name="email" value="{{ old('email') }}" required>
-
-        @if ($errors->has('email'))
-          <span class="alert alert_error" role="alert">
-            <strong>{{ $errors->first('email') }}</strong>
-          </span>
-        @endif
 
         <Input type="submit" class="button" value="{{ __('Send Password Reset Link') }}" />
 

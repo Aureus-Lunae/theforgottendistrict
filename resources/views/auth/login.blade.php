@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="form_container">
-    <div>
+    <div class="form_width">
 
       <h2>Login</h2>
 
@@ -17,24 +17,20 @@
         </div>
       @endif
 
+      @if ($errors->any())
+        @foreach ($errors->all() as $error)
+          <label class='alert alert_error'>{{ $error }}</label>
+        @endforeach
+      @endif
+
       <form method="POST" action="{{ route('login') }}">
         @csrf
 
         <label>{{ __('E-Mail Address') }}</label>
         <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
-        @if ($errors->has('email'))
-          <span class="alert alert_error" role="alert">
-            <strong>{{ $errors->first('email') }}</strong>
-          </span>
-        @endif
 
         <label for="password">{{ __('Password') }}</label>
         <input id="password" type="password" name="password" required>
-        @if ($errors->has('password'))
-          <span class="alert alert_error" role="alert">
-            <strong>{{ $errors->first('password') }}</strong>
-          </span>
-        @endif
 
         <div class="checkbox_wrapper">
           <div class="checkbox">

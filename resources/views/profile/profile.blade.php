@@ -36,9 +36,13 @@
 
         {{ method_field('PATCH') }}
         {{ csrf_field() }}
-        @if ($errors->has('avatar'))
-        <label class='alert alert_error'>{{ $errors->first('avatar') }}</label>
+
+        @if ($errors->any())
+          @foreach ($errors->all() as $error)
+            <label class='alert alert_error'>{{ $error }}</label>
+          @endforeach
         @endif
+
         <label>Update Avatar:</label>
         <input type="file" name="avatar">
         <input type="submit" class="button" value="Change Avatar" />

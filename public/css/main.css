@@ -495,7 +495,8 @@ body {
   width: 100%;
 }
 .form_container .form_width {
-  width: 100%;
+  min-width: 75%;
+  max-width: 100%;
 }
 .form_container a {
   display: inline-block;
@@ -540,8 +541,7 @@ body {
 }
 .form_container form input {
   display: block;
-  min-width: 300px;
-  max-width: 100%;
+  width: 300px;
   font-size: 20px;
   padding: 2px 5px;
   border-radius: 8px;
