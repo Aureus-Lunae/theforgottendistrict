@@ -1112,6 +1112,7 @@ body {
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
   color: #1a1a1a;
   text-align: center;
@@ -1125,11 +1126,8 @@ body {
 .pm_side_container .pm .sender,
 .pm_side_container .pm .receiver,
 .pm_side_container .pm .title {
-  display: flex;
-  align-items: center;
   margin: 0 8px;
   padding: 8px;
-  min-width: 100px;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -1139,21 +1137,24 @@ body {
 .pm_side_container .pm .sender,
 .pm_side_container .pm .receiver,
 .pm_side_container .pm .title {
+  min-width: 100px;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.pm_container .pm .time,
 .pm_container .pm .sender,
 .pm_container .pm .receiver,
-.pm_side_container .pm .time,
 .pm_side_container .pm .sender,
 .pm_side_container .pm .receiver {
-  width: 20%;
+  max-width: 250px;
 }
 .pm_container .pm .title,
 .pm_side_container .pm .title {
-  width: 50%;
+  width: 40%;
+}
+.pm_container .pm .time,
+.pm_side_container .pm .time {
+  width: 70px;
 }
 
 /* Markdown Formatting */

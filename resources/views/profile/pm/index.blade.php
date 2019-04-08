@@ -15,7 +15,7 @@
            @endif
           <label class="sender">{{ $incoming->sender->name }}</label>
           <label class="title">{{ $incoming->title }}</label>
-          <label class="time">{{ $incoming->created_at }}</label>
+          <label class="time">{{ date('d M', strtotime($incoming->created_at)) }}</label>
         </a>
       </div>
     @endforeach

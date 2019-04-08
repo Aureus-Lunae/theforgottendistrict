@@ -50,6 +50,7 @@
 			width: 100%;
 			display: flex;
 			flex-wrap: nowrap;
+			justify-content: space-between;
 			align-items: center;
 			color: $primary_text;
 			text-align: center;
@@ -60,11 +61,8 @@
 		.sender,
 		.receiver,
 		.title {
-			display: flex;
-			align-items: center;
 			margin: 0 8px;
 			padding: 8px;
-			min-width: 100px;
 			box-sizing: border-box;
 			cursor: pointer;
 		}
@@ -73,19 +71,23 @@
 		.receiver,
 		.title
 		{
+			min-width: 100px;
 			overflow: hidden;
-			text-overflow: ellipsis;
 			white-space: nowrap;
+			text-overflow: ellipsis;
 		}
 
-		.time,
 		.sender,
 		.receiver {
-			width: 20%;
+			max-width: 250px;
 		}
 
 		.title {
-			width: 50%;
+			width: 40%;
+		}
+
+		.time {
+			width: 70px;
 		}
 
 	}

@@ -10,7 +10,7 @@
         <a href="{{ $outgoing->id }}">
           <label class="sender">{{ $outgoing->receiver->name }}</label>
           <label class="title">{{ $outgoing->title }}</label>
-          <label class="time">{{ $outgoing->created_at }}</label>
+          <label class="time">{{ date('d M', strtotime($outgoing->created_at)) }}</label>
         </a>
       </div>
     @endforeach
