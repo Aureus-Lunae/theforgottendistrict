@@ -15,7 +15,9 @@ class EventsController extends Controller {
 	 */
 
 	public function __construct() {
-		$this->middleware('auth');
+		$this->middleware('auth', ['except' => ['index']]);
+		$this->middleware('verified', ['except' => ['index']]);
+		$this->middleware('role:6', ['except' => ['index']]);
 	}
 
 	public function index() {

@@ -27,6 +27,9 @@ Route::get('/profile/changeDescr', 'UserController@showChangeDescrForm')->middle
 Route::post('/profile/changeDescr', 'UserController@changeDescr')->middleware('verified');
 Route::patch('/profile/avatar', 'UserController@updateAvatar')->middleware('verified');
 
+//PM Routes
+Route::resource('/dashboard/pm', 'PMController')->middleware('verified');
+
 //Users Routes
 Route::resource('/users', 'UsersController');
 Route::delete('/users/{user}/avatar', 'UsersController@deleteAvatar');
@@ -41,10 +44,4 @@ Route::patch('/news/{news}', 'NewsController@update')->middleware('verified', 'r
 Route::delete('/news/{news}', 'NewsController@destroy')->middleware('verified', 'role:6');
 
 //Event Routes
-Route::get('/events', 'EventsController@index');
-Route::post('/events', 'EventsController@store')->middleware('verified', 'role:6');
-Route::get('/events/create', 'EventsController@create')->middleware('verified', 'role:6')->name('createEvents');
-Route::get('/events/{event}/edit', 'EventsController@edit')->middleware('verified', 'role:6');
-Route::patch('/events/{event}', 'EventsController@update')->middleware('verified', 'role:6');
-Route::delete('/events/{event}', 'EventsController@destroy')->middleware('verified', 'role:6');
-Route::get('/events/{event}')->middleware('verified', 'role:6');
+Route::resource('/events', 'EventsController');

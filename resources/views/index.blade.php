@@ -6,7 +6,7 @@
 
   <div class="info_box">
     <div class="img_container">
-      <img src="/img/tfd_logo.svg" />
+      <img src="/img/site/campfire.svg" />
     </div>
     <div class="markdown homelinks">
 @markdown
