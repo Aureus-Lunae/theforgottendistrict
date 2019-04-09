@@ -15,6 +15,9 @@
 
 		<ul class="nav_links">
 			<li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+
+
+			{{-- Server Info --}}
 			<li>
 				<input class="subtoggle" id="info" type="checkbox" name="info" />
 				<label for="info"><i class="fas fa-caret-down"></i> Server Info</label>
@@ -24,7 +27,21 @@
 					<li><a href="/rules"><i class="fas fa-gavel"></i> Rules</a></li>
 				</ul>
 			</li>
-			<li><a href="/support"><i class="fas fa-gift"></i> Support Us</a></li>
+
+			{{-- Server Community --}}
+			<li>
+
+				<input class="subtoggle" id="community" type="checkbox" name="community" />
+				<label for="community"><i class="fas fa-caret-down"></i> Community</label>
+
+				<ul class="submenu">
+					<li><a href="/users"><i class="fas fa-users"></i> Users</a></li>
+					<li><a href="/support"><i class="fas fa-gift"></i> Donate</a></li>
+				</ul>
+
+			</li>
+
+
 
 			{{-- Authorization Links --}}
 			@guest
