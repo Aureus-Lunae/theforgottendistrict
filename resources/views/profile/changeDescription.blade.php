@@ -33,6 +33,7 @@
 	      <textarea name="descr" placeholder="Description" maxlength="500">{{ Auth::user()->desc }}</textarea>
 
 	      <input type="submit" class="button" />
+        <a href="/profile">back</a>
 	    </form>
 	  </div>
 

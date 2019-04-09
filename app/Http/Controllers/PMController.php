@@ -49,6 +49,13 @@ class PMController extends Controller {
 		return view('profile.pm.create');
 	}
 
+	public function reply($id) {
+		$pm = PM::with('sender')
+			->find($id);
+
+		return view('profile.pm.reply', compact('pm'));
+	}
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -102,7 +109,7 @@ class PMController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit(PM $pm) {
-		//
+		abort(404);
 	}
 
 	/**
@@ -113,7 +120,7 @@ class PMController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(pmRequest $request, PM $pm) {
-		//
+		abort(404);
 	}
 
 	/**

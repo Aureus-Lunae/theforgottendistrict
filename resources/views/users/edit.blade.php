@@ -56,6 +56,7 @@
         </div>
 
 	      <input type="submit" class="button" />
+        <a href="/users/{{$user->id}}">back</a>
 	    </form>
 	  </div>
 

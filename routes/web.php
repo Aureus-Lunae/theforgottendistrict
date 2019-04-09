@@ -29,6 +29,7 @@ Route::patch('/profile/avatar', 'UserController@updateAvatar')->middleware('veri
 
 //PM Routes
 Route::get('/dashboard/pm/outbox', 'PMController@Outgoing');
+Route::get('/dashboard/pm/{pm}/reply', 'PMController@Reply');
 Route::resource('/dashboard/pm', 'PMController');
 
 //Users Routes

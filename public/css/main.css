@@ -496,7 +496,7 @@ body {
 }
 .form_container .form_width {
   min-width: 75%;
-  max-width: 100%;
+  max-width: 90%;
 }
 .form_container a {
   display: inline-block;
@@ -609,6 +609,8 @@ body {
   font-weight: 700;
 }
 .form_container form .button {
+  display: inline-block;
+  margin-right: 16px;
   width: 250px;
   font-size: 20px;
   color: #85ff7a;

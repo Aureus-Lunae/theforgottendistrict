@@ -68,7 +68,7 @@ class EventsController extends Controller {
 		}
 
 		$event->save();
-		return redirect('/');
+		return redirect('/events');
 	}
 
 	/**
@@ -113,7 +113,7 @@ class EventsController extends Controller {
 		}
 
 		$event->save();
-		return redirect('/');
+		return redirect('/events');
 	}
 
 	/**

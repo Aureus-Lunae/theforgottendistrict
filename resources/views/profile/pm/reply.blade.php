@@ -24,15 +24,15 @@
       <form method="POST" action="/dashboard/pm">
         {{ csrf_field() }}
         <label for="title">Title</label>
-        <input type="text" name="title" placeholder="title" maxlength="50"/>
+        <input type="text" name="title" placeholder="title" maxlength="50"/ value="Re: {{ $pm->title }}">
 
         <label for="receiver">To</label>
-        <input type="text" name="receiver" placeholder="to" />
+        <input type="text" name="receiver" placeholder="to" value="{{ $pm->sender->name }}"/>
 
         <label for="msg">Message</label>
         <textarea name="msg" placeholder="Message" maxlength="1000"></textarea>
 
-        <input type="submit" class="button" value="Send"/>
+        <input type="submit" class="button" value="Reply"/>
         <a href="/dashboard/pm">back</a>
       </form>
     </div>

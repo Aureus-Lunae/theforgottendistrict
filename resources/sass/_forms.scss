@@ -45,7 +45,7 @@
 
 	.form_width {
 		min-width: 75%;
-		max-width: 100%;
+		max-width: 90%;
 	}
 
 	a {
@@ -178,6 +178,8 @@
 		}
 
 		.button {
+			display: inline-block;
+			margin-right: 16px;
 			width: 250px;
 			font-size: 20px;
 			color: $succes_text;
