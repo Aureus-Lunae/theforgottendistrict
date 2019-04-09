@@ -23,7 +23,7 @@ class pmRequest extends FormRequest {
 		return [
 			'title' => 'required|max:50',
 			'receiver' => 'required',
-			'msg' => 'required|min:10|max:1000',
+			'msg' => 'required|min:3|max:1000',
 		];
 	}
 
@@ -33,7 +33,7 @@ class pmRequest extends FormRequest {
 			'title.max' => 'The title can\'t be more than 50 characters.',
 			'receiver.required' => 'Please fill the person you send this to.',
 			'msg.required' => 'Please fill in the message.',
-			'msg.min' => 'The message must be at least 10 characters.',
+			'msg.min' => 'The message must be at least 3 characters.',
 			'msg.max' => 'The message can\'t be more than 1000 characters.',
 		];
 	}
