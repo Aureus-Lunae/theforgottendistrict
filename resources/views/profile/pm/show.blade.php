@@ -20,7 +20,7 @@
 
     @if (Auth::user()->id == $pm->receiver_id)
       <div class="links">
-        <a href="/dashboard/pm/{{$pm->id}}/reply">Reply</a>
+        <a href="/dashboard/pm/{{$pm->id}}/reply"><i class="fas fa-reply"></i> Reply</a>
       </div>
     @endif
   </div>

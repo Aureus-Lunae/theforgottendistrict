@@ -6,14 +6,13 @@
 	</div>
 	{{-- Navigation --}}
 	<div class="navigation">
-		{{-- <div id="nav_title">
-					The Forgotten District
-				</div> --}}
+
 		<div id="nav_logo">
 			<img src="/img/tfd_logo.svg" />
 		</div>
 		<input class="menu_toggle" type="checkbox" id="menu_toggle">
 		<label class="menu_button" for="menu_toggle"><span></span></label>
+
 		<ul class="nav_links">
 			<li><a href="/"><i class="fas fa-home"></i> Home</a></li>
 			<li>
@@ -26,6 +25,7 @@
 				</ul>
 			</li>
 			<li><a href="/support"><i class="fas fa-gift"></i> Support Us</a></li>
+
 			{{-- Authorization Links --}}
 			@guest
 				<li><a href={{ route('login') }}><i class="fas fa-sign-in-alt"></i> {{ __('Login') }}</a></li>
@@ -39,6 +39,9 @@
 						{{ Auth::user()->display_name }} </label>
 					<ul class="submenu">
 						<li><a href={{ route('profile') }}><i class="fas fa-user"></i> Profile</a></li>
+						<li><a href="/dashboard/pm"><i class="fas fa-envelope"></i> PM</a></li>
+
+						{{-- Logout --}}
 						<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 								<i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
 							</a>
@@ -46,9 +49,11 @@
 								@csrf
 							</form>
 						</li>
+
 					</ul>
 				</li>
 			@endguest
+
 		</ul>
 	</div>
 </div>
