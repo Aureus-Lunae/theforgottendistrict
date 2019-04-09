@@ -13,14 +13,15 @@
   <div class="date">
     {{ date('j M Y, H:i:s', strtotime($pm->created_at)) }}
   </div>
-</div>
+
 
   <h2 class="msgtitle">{{$pm->title}}</h2>
   <div class="markdown msg">
-    @markdown
-{{$pm->msg}}
-    @endmarkdown
+    @markdown($pm->msg)
+
+
     </div>
+  </div>
 </div>
 
 <div class="pm_side_container">

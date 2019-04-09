@@ -467,7 +467,7 @@ body {
 .alert {
   display: block;
   min-width: 300px;
-  max-width: 500px;
+  max-width: 100%;
   transform: skew(-15deg);
   margin: 16px 0;
 }
@@ -1109,6 +1109,14 @@ body {
   flex-wrap: wrap;
   float: left;
   width: 150px;
+}
+.pm_container .users .from,
+.pm_side_container .users .from {
+  font-weight: 700;
+}
+.pm_container .users .to,
+.pm_side_container .users .to {
+  font-weight: 700;
 }
 .pm_container .date,
 .pm_side_container .date {

@@ -24,7 +24,7 @@
       <form method="POST" action="/dashboard/pm">
         {{ csrf_field() }}
         <label for="title">Title</label>
-        <input type="text" name="title" placeholder="title" />
+        <input type="text" name="title" placeholder="title" maxlength="50"/>
 
         <label for="receiver">To</label>
         <input type="text" name="receiver" placeholder="to" />

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NewsRequest extends FormRequest {
+class pmRequest extends FormRequest {
 	/**
 	 * Determine if the user is authorized to make this request.
 	 *
@@ -22,17 +22,19 @@ class NewsRequest extends FormRequest {
 	public function rules() {
 		return [
 			'title' => 'required|max:50',
-			'news' => 'required|min:10|max:3000',
+			'receiver' => 'required',
+			'msg' => 'required|min:10|max:1000',
 		];
 	}
 
 	public function messages() {
 		return [
-			'title.required' => 'Please fill in the news title.',
+			'title.required' => 'Please fill in the title.',
 			'title.max' => 'The title can\'t be more than 50 characters.',
-			'news.required' => 'Please fill in the news.',
-			'news.min' => 'The news must be at least 100 characters.',
-			'news.max' => 'The news can\'t be more than 3000 characters.',
+			'receiver.required' => 'Please fill the person you send this to.',
+			'msg.required' => 'Please fill in the message.',
+			'msg.min' => 'The message must be at least 10 characters.',
+			'msg.max' => 'The message can\'t be more than 1000 characters.',
 		];
 	}
 

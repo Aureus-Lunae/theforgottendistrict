@@ -3,7 +3,7 @@
 @section('content')
 <div class="pm_container">
 
-  <h1 class="content_title"><i class="fas fa-inbox"></i> Incoming Mail</h1>
+  <h1 class="content_title"><i class="fas fa-paper-plane"></i> Outgoing Mail</h1>
 
     @foreach($sent as $outgoing)
       <div class="pm">

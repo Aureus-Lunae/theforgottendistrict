@@ -42,14 +42,22 @@
 		}
 	}
 
-	.users{
+	.users {
 		display: flex;
 		flex-wrap: wrap;
 		float: left;
 		width: 150px;
+
+		.from {
+			font-weight: 700;
+		}
+
+		.to {
+			font-weight: 700;
+		}
 	}
 
-	.date{
+	.date {
 		display: flex;
 		flex-wrap: wrap;
 		float: right;

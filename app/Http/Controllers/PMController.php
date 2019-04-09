@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\pmRequest;
 use App\PM;
 use App\User;
 use Illuminate\Http\Request;
@@ -52,7 +53,7 @@ class PMController extends Controller {
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request) {
+	public function store(pmRequest $request) {
 
 		$receiver = User::where('username', '=', strtolower(request('receiver')))
 			->first();
@@ -109,7 +110,7 @@ class PMController extends Controller {
 	 * @param  \App\PM  $pM
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, PM $pm) {
+	public function update(pmRequest $request, PM $pm) {
 		//
 	}
 
