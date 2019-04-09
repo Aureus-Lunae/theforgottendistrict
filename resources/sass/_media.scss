@@ -62,7 +62,11 @@
 		label {
 			display: block;
 			float: left;
+			min-width: 150px;
 			max-width: 200px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
 		}
 
 		&>li {

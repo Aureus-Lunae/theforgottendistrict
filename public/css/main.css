@@ -1336,7 +1336,11 @@ body {
   .header_wrapper .navigation .nav_links label {
     display: block;
     float: left;
+    min-width: 150px;
     max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .header_wrapper .navigation .nav_links > li {
     float: left;
