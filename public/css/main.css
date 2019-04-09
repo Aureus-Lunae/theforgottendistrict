@@ -1156,10 +1156,10 @@ body {
 .pm_container .pm a,
 .pm_side_container .pm a {
   width: calc(100% - 50px);
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  padding: 8px;
+  grid-template-columns: 1fr 90px;
+  grid-template-areas: "user time" "msg msg";
   color: #1a1a1a;
   text-align: center;
   text-decoration: none;
@@ -1173,8 +1173,6 @@ body {
 .pm_side_container .pm .receiver,
 .pm_side_container .pm .title {
   text-align: left;
-  margin: 0 4px;
-  padding: 8px;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -1193,15 +1191,15 @@ body {
 .pm_container .pm .receiver,
 .pm_side_container .pm .sender,
 .pm_side_container .pm .receiver {
-  width: 140px;
+  grid-area: user;
 }
 .pm_container .pm .title,
 .pm_side_container .pm .title {
-  width: calc(100% - 250px);
+  grid-area: msg;
 }
 .pm_container .pm .time,
 .pm_side_container .pm .time {
-  width: 70px;
+  grid-area: time;
 }
 .pm_container .pm .icons,
 .pm_side_container .pm .icons {
@@ -1227,6 +1225,12 @@ body {
   outline: inherit;
 }
 
+@media (min-width: 1400px) {
+  .pm_container .pm a {
+    grid-template-columns: 150px 1fr 90px;
+    grid-template-areas: "user msg time";
+  }
+}
 /* Markdown Formatting */
 .markdown h1 {
   font-size: 21px;

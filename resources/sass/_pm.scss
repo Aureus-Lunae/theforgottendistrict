@@ -83,10 +83,10 @@
 
 		a {
 			width: calc(100% - 50px);
-			display: flex;
-			flex-wrap: nowrap;
-			justify-content: space-between;
-			align-items: center;
+			display: grid;
+			padding: 8px;
+			grid-template-columns: 1fr 90px;
+			grid-template-areas: "user time" "msg msg";
 			color: $primary_text;
 			text-align: center;
 			text-decoration: none;
@@ -97,8 +97,6 @@
 		.receiver,
 		.title {
 			text-align: left;
-			margin: 0 4px;
-			padding: 8px;
 			box-sizing: border-box;
 			cursor: pointer;
 		}
@@ -114,15 +112,15 @@
 
 		.sender,
 		.receiver {
-			width: 140px;
+			grid-area: user;
 		}
 
 		.title {
-			width: calc(100% - 250px);
+			grid-area: msg;
 		}
 
 		.time {
-			width: 70px;
+			grid-area: time;
 		}
 
 		.icons {
@@ -148,4 +146,12 @@
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+}
+
+@media (min-width: 1400px) {
+
+	.pm_container .pm a {
+			grid-template-columns: 150px 1fr 90px;
+			grid-template-areas: "user msg time";
+	}
 }

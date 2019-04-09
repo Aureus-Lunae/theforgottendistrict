@@ -8,17 +8,17 @@
     @foreach($received as $incoming)
       <div class="pm">
         <div class="icons">
-          @if ($incoming->read)
-            <i class="fas fa-envelope-open"></i>
-          @else
-            <i class="fas fa-envelope"></i>
-          @endif
-
           <form action="/dashboard/pm/{{$incoming->id}}" method="POST">
               {{ method_field('DELETE') }}
               {{ csrf_field() }}
               <button class="trash"><i class='fas fa-trash'></i></button>
           </form>
+
+          @if ($incoming->read)
+            <i class="fas fa-envelope-open"></i>
+          @else
+            <i class="fas fa-envelope"></i>
+          @endif
         </div>
         <a href="/dashboard/pm/{{ $incoming->id }}">
           <label class="sender">{{ $incoming->sender->name }}</label>
