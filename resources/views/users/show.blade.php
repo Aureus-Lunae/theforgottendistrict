@@ -26,6 +26,15 @@
 
 
   <div class="side_container">
+    <div class="dashboard">
+      <h2 class="title">Options</h2>
+      <div class="dashboard_links">
+        <div class="links">
+          <a href="/dashboard/pm/create?user={{$user->id}}">Send PM</a>
+        </div>
+      </div>
+    </div>
+
     @if (Auth::user()->staff == 1 && Auth::user()->rank >= 5)
       <div class="dashboard">
         <h2 class="title"><i class="fas fa-eye"></i> Staff Dashboard</h2>

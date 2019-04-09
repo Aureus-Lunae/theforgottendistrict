@@ -27,13 +27,17 @@
         <input type="text" name="title" placeholder="title" maxlength="50"/>
 
         <label for="receiver">To</label>
-        <input type="text" name="receiver" placeholder="to" />
+        <input type="text" name="receiver" placeholder="to" {{ $receiver ? 'value=' . $receiver  : '' }} />
 
         <label for="msg">Message</label>
         <textarea name="msg" placeholder="Message" maxlength="1000"></textarea>
 
         <input type="submit" class="button" value="Send"/>
-        <a href="/dashboard/pm">back</a>
+        @if ($receiver)
+          <a href="/users/{{$userid}}">back</a>
+        @else
+          <a href="/dashboard/pm">back</a>
+        @endif
       </form>
     </div>
   </div>

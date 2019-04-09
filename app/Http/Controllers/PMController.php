@@ -46,7 +46,18 @@ class PMController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function create() {
-		return view('profile.pm.create');
+
+		if (isset($_GET['user'])) {
+			$receiver = user::find($_GET['user']);
+			$to = $receiver->name;
+			$id = $_GET['user'];
+		} else {
+			$to = $id = NULL;
+		}
+
+		return view('profile.pm.create')
+			->with('receiver', $to)
+			->with('userid', $id);
 	}
 
 	public function reply($id) {
