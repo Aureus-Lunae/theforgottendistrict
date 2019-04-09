@@ -202,21 +202,30 @@ body {
   color: #e6e6e6;
 }
 .header_wrapper .navigation .nav_links label {
+  color: #e6e6e6;
   padding: 16px 20px;
   box-sizing: border-box;
   overflow: hidden;
-  display: none;
+  display: block;
   cursor: pointer;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.header_wrapper .navigation .nav_links input {
+.header_wrapper .navigation .nav_links .subtoggle {
   display: none;
+}
+.header_wrapper .navigation .nav_links .subtoggle:checked ~ label {
+  color: #66ffff;
+}
+.header_wrapper .navigation .nav_links .subtoggle:checked ~ ul.submenu {
+  max-height: 300px;
+  transition: max-height 0.5s ease-in;
 }
 .header_wrapper .navigation .nav_links ul.submenu {
   padding: 0;
   background: #474747;
   top: 100%;
+  max-height: 0;
   transition: max-height 0.5s ease-out;
   overflow: hidden;
   list-style-type: none;

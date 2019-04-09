@@ -17,7 +17,7 @@
 		<ul class="nav_links">
 			<li><a href="/"><i class="fas fa-home"></i> Home</a></li>
 			<li>
-				<input id="info" type="checkbox" name="info" />
+				<input class="subtoggle" id="info" type="checkbox" name="info" />
 				<label for="info"><i class="fas fa-caret-down"></i> Server Info</label>
 				<ul class="submenu">
 					<li><a href="/events"><i class="fas fa-calendar-week"></i> Events</a></li>
@@ -34,7 +34,7 @@
 				@endif
 			@else
 				<li>
-					<input id="usermenu" type="checkbox" name="usermenu" />
+					<input class="subtoggle" id="usermenu" type="checkbox" name="usermenu" />
 					<label for="usermenu"><i class="fas fa-caret-down"></i>
 						{{ Auth::user()->display_name }} </label>
 					<ul class="submenu">
