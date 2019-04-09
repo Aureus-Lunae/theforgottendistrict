@@ -41,7 +41,7 @@
 
 					@if ($countPM > 0)
 						<label class="notifications">
-					 		<i class="fas fa-bell">{{ $countPM }}</i>
+					 		<i class="fas fa-bell"> {{ $countPM }}</i>
 					 	</label>
 					@endif
 
