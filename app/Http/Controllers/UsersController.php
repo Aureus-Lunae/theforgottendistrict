@@ -15,9 +15,17 @@ class UsersController extends Controller {
 	}
 
 	public function index() {
-		$users = user::orderBy('display_name', 'asc')
-			->Paginate(20);
+
+		$users = user::orderBy('display_name', 'asc');
+
+		if (isset($_GET['search'])) {
+			$users = $users->where('username', 'like', '%' . $_GET['search'] . '%');
+		}
+
+		$users = $users->Paginate(20);
+
 		return view('users.index', compact('users'));
+
 	}
 
 	public function create() {

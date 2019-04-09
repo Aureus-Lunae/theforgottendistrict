@@ -708,14 +708,49 @@ body {
 }
 /* Staff */
 .staff_container {
+  margin-top: 16px;
   grid-area: main/main/side/side;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: flex-start;
 }
 .staff_container a {
   color: #002a38;
   text-decoration: none;
+}
+.staff_container .search_form {
+  margin: 8px 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.staff_container .search_form .search {
+  display: inline-block;
+  width: 200px;
+  font-size: 20px;
+  padding: 2px 5px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  outline: none;
+  border: #e6e6e6 2px inset;
+}
+.staff_container .search_form .search:focus {
+  border: #66d9ff 2px inset;
+}
+.staff_container .search_form .button {
+  display: inline-block;
+  margin-right: 16px;
+  width: 100px;
+  font-size: 20px;
+  color: #85ff7a;
+  background: #043300;
+  outline: none;
+}
+.staff_container .search_form .button:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
 }
 .staff_container .card_small {
   display: block;

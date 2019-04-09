@@ -2,6 +2,14 @@
 
 @section('content')
   <div class="staff_container">
+
+    {{-- Search Bar --}}
+
+  <form class="search_form" action="/users/" method="GET">
+    <input type="text" class="search" name="search">
+    <input type="submit" class="button" value="Search"/>
+  </form>
+
     {{-- Pagination top --}}
     @if ($users->hasMorePages() || $users->previousPageUrl() )
       <div class="pagination">

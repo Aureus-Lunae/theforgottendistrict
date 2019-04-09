@@ -1,13 +1,53 @@
 /* Staff */
 .staff_container {
+	margin-top: 16px;
 	grid-area: main / main / side / side;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	align-content: flex-start;
 
 	a {
 		color: $link-color;
 		text-decoration: none;
+	}
+
+	.search_form {
+		margin: 8px 0;
+		display: block;
+		width: 100%;
+		text-align: center;
+
+		.search {
+			display: inline-block;
+			width: 200px;
+			font-size: 20px;
+			padding: 2px 5px;
+			border-radius: 8px;
+			margin-bottom: 16px;
+			outline: none;
+			border: $input 2px inset;
+
+			&:focus {
+				border: $quaternary 2px inset;
+			}
+		}
+
+		.button {
+			display: inline-block;
+			margin-right: 16px;
+			width: 100px;
+			font-size: 20px;
+			color: $succes_text;
+			background: $succes;
+			outline: none;
+
+			&:active {
+				position: relative;
+				top: 2px;
+				left: 2px;
+			}
+		}
 	}
 
 	.card_small {
