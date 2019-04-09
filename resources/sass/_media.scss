@@ -50,6 +50,10 @@
 		float: right;
 		overflow: visible;
 
+		.notifications{
+			display: inline-block;
+		}
+
 		input:checked~label {
 			color: $navbar-text-hover;
 		}

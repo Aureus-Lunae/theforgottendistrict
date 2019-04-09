@@ -177,6 +177,7 @@ return [
 		App\Providers\RouteServiceProvider::class,
 		GrahamCampbell\Markdown\MarkdownServiceProvider::class,
 		RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
+		App\Providers\ViewServiceProvider::class,
 
 	],
 

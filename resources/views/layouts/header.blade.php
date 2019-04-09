@@ -36,10 +36,23 @@
 				<li>
 					<input class="subtoggle" id="usermenu" type="checkbox" name="usermenu" />
 					<label for="usermenu"><i class="fas fa-caret-down"></i>
-						{{ Auth::user()->display_name }} </label>
+						{{ Auth::user()->display_name }}
+					</label>
+
+					@if ($countPM > 0)
+						<label class="notifications">
+					 		<i class="fas fa-bell">{{ $countPM }}</i>
+					 	</label>
+					@endif
+
 					<ul class="submenu">
 						<li><a href={{ route('profile') }}><i class="fas fa-user"></i> Profile</a></li>
-						<li><a href="/dashboard/pm"><i class="fas fa-envelope"></i> PM</a></li>
+						<li><a href="/dashboard/pm">
+							@if ($countPM > 0)
+								{{ $countPM }}
+							@endif
+							<i class="fas fa-envelope"></i> PM
+						</a></li>
 
 						{{-- Logout --}}
 						<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

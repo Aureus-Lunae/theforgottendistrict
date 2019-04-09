@@ -161,6 +161,13 @@
 				white-space: nowrap;
 			}
 
+			.notifications {
+				display: none;
+				min-width: 10px;
+				max-width: 50px;
+				padding: 16px 0;
+			}
+
 			.subtoggle {
 				display: none;
 			}

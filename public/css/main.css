@@ -211,6 +211,12 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.header_wrapper .navigation .nav_links .notifications {
+  display: none;
+  min-width: 10px;
+  max-width: 50px;
+  padding: 16px 0;
+}
 .header_wrapper .navigation .nav_links .subtoggle {
   display: none;
 }
@@ -1329,6 +1335,9 @@ body {
     max-height: 600px;
     float: right;
     overflow: visible;
+  }
+  .header_wrapper .navigation .nav_links .notifications {
+    display: inline-block;
   }
   .header_wrapper .navigation .nav_links input:checked ~ label {
     color: #66ffff;
