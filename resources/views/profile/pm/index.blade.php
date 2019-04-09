@@ -41,7 +41,7 @@
 </div>
 
 <div class="pm_side_container">
-  <h1 class="content_title"><i class="fas fa-inbox"></i>Menu</h1>
+  <h1 class="content_title"><i class="fas fa-inbox"></i> Menu</h1>
   @if (session('success'))
     <div class="alert alert_success">
       {{ session('success') }}

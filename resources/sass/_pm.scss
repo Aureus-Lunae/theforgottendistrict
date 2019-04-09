@@ -97,7 +97,7 @@
 		.receiver,
 		.title {
 			text-align: left;
-			margin: 0 8px;
+			margin: 0 4px;
 			padding: 8px;
 			box-sizing: border-box;
 			cursor: pointer;
@@ -114,11 +114,11 @@
 
 		.sender,
 		.receiver {
-			max-width: 250px;
+			width: 140px;
 		}
 
 		.title {
-			width: calc(100% - 330px);
+			width: calc(100% - 250px);
 		}
 
 		.time {
@@ -133,6 +133,9 @@
 			justify-content: space-between;
 		}
 
+		.icon {
+			width: 25px;
+		}
 	}
 }
 

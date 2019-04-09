@@ -7,6 +7,13 @@
 
     @foreach($sent as $outgoing)
       <div class="pm">
+        <div class="icons icon">
+          <form action="/dashboard/pm/{{$outgoing->id}}" method="POST">
+              {{ method_field('DELETE') }}
+              {{ csrf_field() }}
+              <button class="trash"><i class='fas fa-trash'></i></button>
+          </form>
+        </div>
         <a href="/dashboard/pm/{{ $outgoing->id }}">
           <label class="sender">{{ $outgoing->receiver->name }}</label>
           <label class="title">{{ $outgoing->title }}</label>
@@ -30,7 +37,14 @@
 </div>
 
 <div class="pm_side_container">
-  <h1 class="content_title"><i class="fas fa-inbox"></i>Menu</h1>
+  <h1 class="content_title"><i class="fas fa-inbox"></i> Menu</h1>
+
+  @if (session('success'))
+    <div class="alert alert_success">
+      {{ session('success') }}
+    </div>
+  @endif
+
   <div class="links">
     <a href="/dashboard/pm/create"><i class="fas fa-at"></i> New PM</a>
     <a href="/dashboard/pm"><i class="fas fa-inbox"></i> Incoming</a>

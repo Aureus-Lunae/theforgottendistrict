@@ -1162,7 +1162,7 @@ body {
 .pm_side_container .pm .receiver,
 .pm_side_container .pm .title {
   text-align: left;
-  margin: 0 8px;
+  margin: 0 4px;
   padding: 8px;
   box-sizing: border-box;
   cursor: pointer;
@@ -1182,11 +1182,11 @@ body {
 .pm_container .pm .receiver,
 .pm_side_container .pm .sender,
 .pm_side_container .pm .receiver {
-  max-width: 250px;
+  width: 140px;
 }
 .pm_container .pm .title,
 .pm_side_container .pm .title {
-  width: calc(100% - 330px);
+  width: calc(100% - 250px);
 }
 .pm_container .pm .time,
 .pm_side_container .pm .time {
@@ -1199,6 +1199,10 @@ body {
   align-items: center;
   width: 50px;
   justify-content: space-between;
+}
+.pm_container .pm .icon,
+.pm_side_container .pm .icon {
+  width: 25px;
 }
 
 .trash {

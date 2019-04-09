@@ -33,6 +33,7 @@ class PMController extends Controller {
 	public function Outgoing() {
 		$sent = PM::with('receiver')
 			->where('sender_id', '=', auth()->user()->id)
+			->where('sender_deleted', '=', false)
 			->orderBy('created_at', 'desc')
 			->simplePaginate(20, ['*'], 'sent');
 
@@ -126,6 +127,15 @@ class PMController extends Controller {
 		if (auth()->user()->id == $pm->receiver_id) {
 			$pm->receiver_deleted = true;
 			$pm->save();
+		}
+
+		if (auth()->user()->id == $pm->sender_id) {
+			$pm->sender_deleted = true;
+			$pm->save();
+		}
+
+		if ($pm->sender_deleted && $pm->receiver_deleted) {
+			PM::destroy($pm->id);
 		}
 
 		return redirect()->back()->with("Success", "PM deleted");
