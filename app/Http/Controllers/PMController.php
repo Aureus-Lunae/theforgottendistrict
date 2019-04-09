@@ -23,6 +23,7 @@ class PMController extends Controller {
 	public function index() {
 		$received = PM::with('sender')
 			->where('receiver_id', '=', auth()->user()->id)
+			->where('receiver_deleted', '=', false)
 			->orderBy('created_at', 'desc')
 			->simplePaginate(20, ['*'], 'received');
 
@@ -121,6 +122,12 @@ class PMController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy(PM $pm) {
-		//
+
+		if (auth()->user()->id == $pm->receiver_id) {
+			$pm->receiver_deleted = true;
+			$pm->save();
+		}
+
+		return redirect()->back()->with("Success", "PM deleted");
 	}
 }
