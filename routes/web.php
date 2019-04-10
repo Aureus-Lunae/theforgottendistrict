@@ -16,6 +16,7 @@ Route::get('/', 'IndexController@index');
 Route::get('/rules', 'IndexController@rules');
 Route::get('/staff', 'IndexController@staff');
 Route::get('/support', 'IndexController@support');
+Route::get('/sys-brew', 'IndexController@brew');
 
 Auth::routes(['verify' => true]);
 

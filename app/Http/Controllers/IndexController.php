@@ -29,4 +29,8 @@ class IndexController extends Controller {
 	public function support() {
 		return view('support');
 	}
+
+	public function brew() {
+		abort(418);
+	}
 }
