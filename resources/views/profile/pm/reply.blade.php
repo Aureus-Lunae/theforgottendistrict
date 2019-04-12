@@ -30,7 +30,8 @@
         <input type="text" name="receiver" placeholder="to" value="{{ $pm->sender->name }}"/>
 
         <label for="msg">Message</label>
-        <textarea name="msg" placeholder="Message" maxlength="1000"></textarea>
+        <label class="count"><span id="amount">0</span> / 1000 characters.</label>
+        <textarea name="msg" placeholder="Message" onKeyDown="textCounter(this.form.msg,amount,1000)" onKeyUp="textCounter(this.form.msg,amount,1000)" onfocus="textCounter(this.form.msg,amount,1000)"></textarea>
 
         <input type="submit" class="button" value="Reply"/>
         <a href="/dashboard/pm">back</a>
@@ -43,4 +44,5 @@
       <img src="/img/site/campfire.svg" alt="news" class="form_img" />
     </div>
   </div>
+  <script src="/js/character-count.js"></script>
 @endsection

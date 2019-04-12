@@ -16,8 +16,8 @@
         <label for="title">News Title</label>
        <input type="text" name="title" placeholder="news title" />
 
-        <label for="news">News</label>
-        <textarea name="news" placeholder="news" maxlength="3000"></textarea>
+        <label class="count"><span id="amount">0</span> / 3000 characters.</label>
+        <textarea name="news" placeholder="news" onKeyDown="textCounter(this.form.news,amount,3000)" onKeyUp="textCounter(this.form.news,amount,3000)"></textarea>
         <input type="submit" class="button" />
       </form>
     </div>
@@ -28,4 +28,5 @@
       <img src="/img/site/book.png" alt="news" class="form_img" />
     </div>
   </div>
+  <script src="/js/character-count.js"></script>
 @endsection

@@ -30,7 +30,8 @@
         <label for="endtime">End time in UTC</label>
         <input type="time" name="endtime" value="{{old('endtime') ? old('endtime') : $event->endtime}}" />
 
-        <textarea name="event" placeholder="Event description">{{old('event') ? old('event') : $event->event}}</textarea>
+        <label class="count"><span id="amount">0</span> / 3000 characters.</label>
+        <textarea name="event" placeholder="Event description" onKeyDown="textCounter(this.form.event,amount,3000)" onKeyUp="textCounter(this.form.event,amount,3000)" onfocus="textCounter(this.form.event,amount,3000)">{{old('event') ? old('event') : $event->event}}</textarea>
 
         <input type="submit" class="button" />
       </form>
@@ -41,4 +42,6 @@
       <img src="/img/site/book.png" alt="news" class="form_img" />
     </div>
   </div>
+
+  <script src="/js/character-count.js"></script>
 @endsection

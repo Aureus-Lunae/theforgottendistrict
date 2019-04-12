@@ -166,6 +166,9 @@ return [
 			         * Package Service Providers...
 		*/
 		Intervention\Image\ImageServiceProvider::class,
+		GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+		RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
+		JohnnyHuy\Laravel\UsefulCommonMarkExtensionServiceProvider::class,
 
 		/*
 			         * Application Service Providers...
@@ -175,8 +178,6 @@ return [
 		// App\Providers\BroadcastServiceProvider::class,
 		App\Providers\EventServiceProvider::class,
 		App\Providers\RouteServiceProvider::class,
-		GrahamCampbell\Markdown\MarkdownServiceProvider::class,
-		RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
 		App\Providers\ViewServiceProvider::class,
 
 	],

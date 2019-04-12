@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="form_container">
-    <div class="forum_width">
+    <div class="form_width">
       <h2>Edit News</h2>
 
       @if ($errors->any())
@@ -19,8 +19,8 @@
         <label for="title">News Title</label>
         <input type="text" name="title" placeholder="news title" value="{{ $news->title}}" />
 
-        <label for="title">News Title</label>
-        <textarea name="news" placeholder="news">{{ $news->news }}</textarea>
+        <label class="count"><span id="amount">0</span> / 3000 characters.</label>
+        <textarea name="news" placeholder="news" onKeyDown="textCounter(this.form.news,amount,3000)" onKeyUp="textCounter(this.form.news,amount,3000)" onfocus="textCounter(this.form.news,amount,3000)">{{ $news->news }}</textarea>
         <input type="submit" class="button" value="Update News"/>
       </form>
 
@@ -38,4 +38,6 @@
       <img src="/img/site/book.png" alt="news" class="form_img" />
     </div>
   </div>
+
+  <script src="/js/character-count.js"></script>
 @endsection

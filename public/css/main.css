@@ -623,6 +623,10 @@ body {
   padding: 2px 5px;
   font-weight: 700;
 }
+.form_container form .count {
+  font-weight: 400;
+  font-size: 18px;
+}
 .form_container form .button {
   display: inline-block;
   margin-right: 16px;

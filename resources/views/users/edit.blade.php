@@ -27,7 +27,8 @@
         @method('PATCH')
 
 	      <label>Description</label>
-	      <textarea name="descr" placeholder="Description" maxlength="500">{{ $user->desc }}</textarea>
+        <label class="count"><span id="amount">0</span> / 500 characters.</label>
+	      <textarea name="descr" placeholder="Description" onKeyDown="textCounter(this.form.descr,amount,500)" onKeyUp="textCounter(this.form.descr,amount,500)" onfocus="textCounter(this.form.descr,amount,500)">{{ $user->desc }}</textarea>
 
         <div class="radio_options">
           <label class="radio_main_label">Rank</label>
@@ -67,4 +68,5 @@
       <img src="/img/avatars/{{ $user->avatar }}" alt="user" class="form_img" />
     </div>
   </div>
+  <script src="/js/character-count.js"></script>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="form_container">
-  	<div>
+  	<div class="form_width">
 	  	<h2>Change Descr</h2>
       <a href="/profile">Back</a>
 
@@ -30,7 +30,8 @@
 	      <input type="password" name="currentPassword" required />
 
 	      <label>Description</label>
-	      <textarea name="descr" placeholder="Description" maxlength="500">{{ Auth::user()->desc }}</textarea>
+        <label class="count"><span id="amount">0</span> / 500 characters.</label>
+	      <textarea name="descr" placeholder="Description" onKeyDown="textCounter(this.form.descr,amount,500)" onKeyUp="textCounter(this.form.descr,amount,500)" onfocus="textCounter(this.form.descr,amount,500)">{{ Auth::user()->desc }}</textarea>
 
 	      <input type="submit" class="button" value="Change Description"/>
         <a href="/profile">back</a>
@@ -44,4 +45,6 @@
       <img src="/img/site/book.png" alt="news" class="form_img" />
     </div>
   </div>
+
+  <script src="/js/character-count.js"></script>
 @endsection

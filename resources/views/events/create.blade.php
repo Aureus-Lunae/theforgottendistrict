@@ -26,7 +26,9 @@
         <label for="endtime">End time in UTC (Only if end date is filled in)</label>
         <input type="time" name="endtime" value="00:00" />
 
-        <textarea name="event" placeholder="Event description"></textarea>
+        <label class="count"><span id="amount">0</span> / 3000 characters.</label>
+        <textarea name="event" placeholder="Event description" onKeyDown="textCounter(this.form.event,amount,3000)" onKeyUp="textCounter(this.form.event,amount,3000)"></textarea>
+        {{-- <input readonly type="text" name="countDisplay" size="4" maxlength="4" value="3000"> Characters remaining --}}
 
         <input type="submit" class="button" />
       </form>
@@ -37,4 +39,5 @@
       <img src="/img/site/book.png" alt="news" class="form_img" />
     </div>
   </div>
+  <script src="/js/character-count.js"></script>
 @endsection
