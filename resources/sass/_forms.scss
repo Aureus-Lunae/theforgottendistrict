@@ -46,9 +46,8 @@
 	.form_width {
 		min-width: 75%;
 		max-width: 90%;
-	}
 
-	a {
+	.back {
 		display: inline-block;
 		margin: 8px 8px;
 		color: $primary-text;
@@ -70,8 +69,9 @@
 			border: 1px solid $primary;
 		}
 	}
+	}
 
-	h2 {
+	.title {
 		font-size: 24px;
 		position: relative;
 		font-weight: 700;
@@ -108,6 +108,45 @@
 			&:focus {
 				border: $quaternary 2px inset;
 			}
+		}
+
+		.wrap {
+			position: relative;
+
+			.renderDisplay {
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				background: $primary;
+				padding: 2px 5px;
+				font-size: 20px;
+				border-radius: 8px;
+				overflow-y: scroll;
+				overflow-x: hidden;
+				border: $input 2px inset;
+			}
+
+			.toggle {
+				display: none;
+			}
+
+			.toggle:checked ~ .renderDisplay {
+				display: inline;
+			}
+
+			label {
+				position: absolute;
+				top: -30px;
+				right: 0;
+				height: 30px;
+				line-height: 30px;
+			}
+
+
 		}
 
 		input[type="checkbox"],

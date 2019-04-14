@@ -2,7 +2,7 @@
 @section('content')
   <div class="form_container">
     <div class="form_width">
-      <h2>Post Event</h2>
+      <h2 class="title">Post Event</h2>
 
       @if ($errors->any())
         @foreach ($errors->all() as $error)
@@ -27,8 +27,12 @@
         <input type="time" name="endtime" value="00:00" />
 
         <label class="count"><span id="amount">0</span> / 3000 characters.</label>
-        <textarea name="event" placeholder="Event description" onKeyDown="textCounter(this.form.event,amount,3000)" onKeyUp="textCounter(this.form.event,amount,3000)"></textarea>
-        {{-- <input readonly type="text" name="countDisplay" size="4" maxlength="4" value="3000"> Characters remaining --}}
+        <div class="wrap">
+          <textarea name="event" placeholder="Event description" onKeyDown="textCounter(this.form.event,amount,3000)" onKeyUp="textCounter(this.form.event,amount,3000)"></textarea>
+          <input class="toggle" id="toggle" type="checkbox" name="toggle">
+          <label for="toggle" onclick="textCounter(this.form.event,amount,3000)"><i class="fas fa-eye"></i></label>
+          <span id="display" class="markdown renderDisplay"></span>
+        </div>
 
         <input type="submit" class="button" />
       </form>
@@ -39,5 +43,6 @@
       <img src="/img/site/book.png" alt="news" class="form_img" />
     </div>
   </div>
+  <script src="/js/commonmark.js"></script>
   <script src="/js/character-count.js"></script>
 @endsection

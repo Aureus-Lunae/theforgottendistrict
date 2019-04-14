@@ -31,7 +31,12 @@
 
         <label for="msg">Message</label>
         <label class="count"><span id="amount">0</span> / 1000 characters.</label>
-        <textarea name="msg" placeholder="Message" onKeyDown="textCounter(this.form.msg,amount,1000)" onKeyUp="textCounter(this.form.msg,amount,1000)" onfocus="textCounter(this.form.msg,amount,1000)"></textarea>
+        <div class="wrap">
+          <textarea name="msg" placeholder="Message" onKeyDown="textCounter(this.form.msg,amount,1000)" onKeyUp="textCounter(this.form.msg,amount,1000)" onfocus="textCounter(this.form.msg,amount,1000)"></textarea>
+          <input class="toggle" id="toggle" type="checkbox" name="toggle">
+          <label for="toggle" onclick="textCounter(this.form.msg,amount,1000)"><i class="fas fa-eye"></i></label>
+          <span id="display" class="markdown renderDisplay"></span>
+        </div>
 
         <input type="submit" class="button" value="Send"/>
         @if ($receiver)
@@ -48,5 +53,7 @@
       <img src="/img/site/campfire.svg" alt="news" class="form_img" />
     </div>
   </div>
+
+  <script src="/js/commonmark.js"></script>
   <script src="/js/character-count.js"></script>
 @endsection

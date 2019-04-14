@@ -513,7 +513,7 @@ body {
   min-width: 75%;
   max-width: 90%;
 }
-.form_container a {
+.form_container .form_width .back {
   display: inline-block;
   margin: 8px 8px;
   color: #1a1a1a;
@@ -522,7 +522,7 @@ body {
   z-index: 1;
   position: relative;
 }
-.form_container a:after {
+.form_container .form_width .back:after {
   content: "";
   position: absolute;
   background: #66d9ff;
@@ -534,7 +534,7 @@ body {
   z-index: -1;
   border: 1px solid #fafafa;
 }
-.form_container h2 {
+.form_container .title {
   font-size: 24px;
   position: relative;
   font-weight: 700;
@@ -543,7 +543,7 @@ body {
   color: #66ffff;
   z-index: 1;
 }
-.form_container h2:after {
+.form_container .title:after {
   content: "";
   position: absolute;
   background: #474747;
@@ -566,6 +566,38 @@ body {
 }
 .form_container form input:focus {
   border: #66d9ff 2px inset;
+}
+.form_container form .wrap {
+  position: relative;
+}
+.form_container form .wrap .renderDisplay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #fafafa;
+  padding: 2px 5px;
+  font-size: 20px;
+  border-radius: 8px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: #e6e6e6 2px inset;
+}
+.form_container form .wrap .toggle {
+  display: none;
+}
+.form_container form .wrap .toggle:checked ~ .renderDisplay {
+  display: inline;
+}
+.form_container form .wrap label {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
 }
 .form_container form input[type=checkbox],
 .form_container form input[type=radio] {

@@ -31,7 +31,13 @@
 
 	      <label>Description</label>
         <label class="count"><span id="amount">0</span> / 500 characters.</label>
-	      <textarea name="descr" placeholder="Description" onKeyDown="textCounter(this.form.descr,amount,500)" onKeyUp="textCounter(this.form.descr,amount,500)" onfocus="textCounter(this.form.descr,amount,500)">{{ Auth::user()->desc }}</textarea>
+        <div class="wrap">
+	        <textarea name="descr" placeholder="Description" onKeyDown="textCounter(this.form.descr,amount,500)" onKeyUp="textCounter(this.form.descr,amount,500)" onfocus="textCounter(this.form.descr,amount,500)">{{ Auth::user()->desc }}</textarea>
+          <input class="toggle" id="toggle" type="checkbox" name="toggle">
+          <label for="toggle" onclick="textCounter(this.form.descr,amount,500)"><i class="fas fa-eye"></i></label>
+          <span id="display" class="markdown renderDisplay"></span>
+        </div>
+
 
 	      <input type="submit" class="button" value="Change Description"/>
         <a href="/profile">back</a>
@@ -46,5 +52,6 @@
     </div>
   </div>
 
+  <script src="/js/commonmark.js"></script>
   <script src="/js/character-count.js"></script>
 @endsection
